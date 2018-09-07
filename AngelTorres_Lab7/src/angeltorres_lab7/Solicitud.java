@@ -2,8 +2,10 @@
 
 package angeltorres_lab7;
 
+import java.io.Serializable;
 
-public class Solicitud {
+
+public class Solicitud implements Serializable{
     
     private boolean aceptar, rechazar;
 

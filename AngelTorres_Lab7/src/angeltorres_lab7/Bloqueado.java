@@ -2,8 +2,10 @@
 
 package angeltorres_lab7;
 
+import java.io.Serializable;
 
-public class Bloqueado extends Usuario{
+
+public class Bloqueado extends Usuario implements Serializable{
 
     public Bloqueado() {
         super();

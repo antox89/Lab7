@@ -2,10 +2,11 @@
 
 package angeltorres_lab7;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
-public class Cita {
+public class Cita implements Serializable{
     
     private Date fecha;
     private Usuario usuario;

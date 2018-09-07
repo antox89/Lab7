@@ -2,11 +2,12 @@
 
 package angeltorres_lab7;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.Icon;
 
 
-public class Usuario {
+public class Usuario implements Serializable{
     
     private String nombre, sexo, usuario, password, descripcion;
     private Icon foto;
@@ -17,6 +18,8 @@ public class Usuario {
     private ArrayList<Cita> listaCalendario = new ArrayList();
     private ArrayList<Bloqueado> listaBloqueados = new ArrayList();
     private String premium;
+    
+    private static final long SerialVersionUID=444L;
 
     public Usuario() {
     }

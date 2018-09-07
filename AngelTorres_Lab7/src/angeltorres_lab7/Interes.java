@@ -2,8 +2,10 @@
 
 package angeltorres_lab7;
 
+import java.io.Serializable;
 
-public class Interes {
+
+public class Interes implements Serializable{
     
     private String interes;
 

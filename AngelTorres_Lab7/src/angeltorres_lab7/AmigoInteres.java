@@ -2,8 +2,10 @@
 
 package angeltorres_lab7;
 
+import java.io.Serializable;
 
-public class AmigoInteres extends Usuario{
+
+public class AmigoInteres extends Usuario implements Serializable{
 
     public AmigoInteres() {
         super();

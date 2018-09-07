@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
@@ -229,6 +230,11 @@ public class Main extends javax.swing.JFrame {
         chb_registro_movies.setText("Movies");
 
         bt_registro_signup.setText("Registrar");
+        bt_registro_signup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_registro_signupMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_registroLayout = new javax.swing.GroupLayout(jd_registro.getContentPane());
         jd_registro.getContentPane().setLayout(jd_registroLayout);
@@ -492,6 +498,40 @@ public class Main extends javax.swing.JFrame {
         jd_registro.setLocationRelativeTo(this);
         jd_registro.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void bt_registro_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_signupMouseClicked
+        
+        int cI=0, edad;
+        String nombre, usuario, password, sexo, premium;
+        Icon foto;
+        Interes inter;
+        
+        foto = lb_registro_foto.getIcon();
+        
+        nombre = tf_registro_nombre.getText();
+        usuario = tf_registro_user.getText();
+        password = tf_registro_passwrd.getText();
+        
+        if(rb_m.isSelected()){
+            sexo="M";
+        }else{
+            sexo="F";
+        }
+        
+        if(checkox_registro.isSelected()){
+            premium = "Premium";
+        }else{
+            premium="Regular";
+        }
+        
+        Usuario u = new Usuario(nombre, sexo, usuario, password, usuario, foto, premium);
+        
+        adminUsuario au = new adminUsuario("./users.att");
+        
+        au.agregarUsuario(u);
+        au.escribirArchivo();
+        
+    }//GEN-LAST:event_bt_registro_signupMouseClicked
 
     /**
      * @param args the command line arguments
