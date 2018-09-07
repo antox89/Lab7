@@ -2,10 +2,13 @@
 
 package angeltorres_lab7;
 
+import java.io.BufferedWriter;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
@@ -41,6 +44,15 @@ public class adminUsuario {
         this.listaUsuarios.add(p);
     }
     
+    public int buscar(String user){
+        for (Usuario usuario : listaUsuarios) {
+            if(usuario.getNombre().equalsIgnoreCase(user)){
+                return 0;
+            }
+        }
+        return -1;
+    }
+    
     public void cargarArchivo(){
         try{
             
@@ -71,7 +83,7 @@ public class adminUsuario {
         ObjectOutputStream bw = null;
         
         try{
-            fw= new FileOutputStream(archivo);
+            fw= new FileOutputStream(archivo,true);
             bw= new ObjectOutputStream(fw);
             for(Usuario e: listaUsuarios){
                 bw.writeObject(e);
@@ -88,6 +100,35 @@ public class adminUsuario {
                 
             }
         }
+    }
+    
+    public void escribirTexto() throws IOException{
+        FileWriter fw = null;
+        BufferedWriter bw=null;
+        
+        try{
+            fw = new FileWriter(archivo,true);
+            bw = new BufferedWriter(fw);
+            
+            for (Usuario u : listaUsuarios) {
+                bw.write(u.getNombre()+";");
+                bw.write(u.getUsuario()+";");
+                bw.write(u.getPassword()+";");
+                bw.write(u.getSexo()+";");
+                for (Interes in : u.getListaIntereses()) {
+                    bw.write(in.getInteres()+",");
+                }
+                bw.write(";");
+                bw.write(u.getPremium()+";");
+                
+            }
+            bw.flush();
+        }catch(IOException e){
+            
+        }
+        bw.close();
+        fw.close();
+        
     }
     
 
