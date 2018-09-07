@@ -51,8 +51,28 @@ public class Main extends javax.swing.JFrame {
         tf_registro_passwrd = new javax.swing.JPasswordField();
         checkox_registro = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        bt_registrar_selectFoto = new javax.swing.JButton();
         lb_registro_foto = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        chb_registro_correr = new javax.swing.JCheckBox();
+        chb_registro_bailar = new javax.swing.JCheckBox();
+        chb_registro_cantar = new javax.swing.JCheckBox();
+        chb_registro_comer = new javax.swing.JCheckBox();
+        chb_registro_viajar = new javax.swing.JCheckBox();
+        chb_registro_nadar = new javax.swing.JCheckBox();
+        chb_registro_techno = new javax.swing.JCheckBox();
+        chb_registro_metal = new javax.swing.JCheckBox();
+        chb_registro_science = new javax.swing.JCheckBox();
+        chb_registro_art = new javax.swing.JCheckBox();
+        chb_registro_anime = new javax.swing.JCheckBox();
+        chb_registro_musica = new javax.swing.JCheckBox();
+        chb_registro_saltar = new javax.swing.JCheckBox();
+        chb_registro_biz = new javax.swing.JCheckBox();
+        chb_registro_sports = new javax.swing.JCheckBox();
+        chb_registro_news = new javax.swing.JCheckBox();
+        chb_registro_tvshows = new javax.swing.JCheckBox();
+        chb_registro_movies = new javax.swing.JCheckBox();
+        bt_registro_signup = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -161,14 +181,54 @@ public class Main extends javax.swing.JFrame {
 
         jLabel10.setText("Foto:");
 
-        jButton2.setText("Seleccionar...");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_registrar_selectFoto.setText("Seleccionar...");
+        bt_registrar_selectFoto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                bt_registrar_selectFotoMouseClicked(evt);
             }
         });
 
         lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp.jpg"))); // NOI18N
+
+        jLabel11.setText("Intereses:");
+
+        chb_registro_correr.setText("Correr");
+
+        chb_registro_bailar.setText("Bailar");
+
+        chb_registro_cantar.setText("Cantar");
+
+        chb_registro_comer.setText("Comer");
+
+        chb_registro_viajar.setText("Viajar");
+
+        chb_registro_nadar.setText("Nadar");
+
+        chb_registro_techno.setText("Techno");
+
+        chb_registro_metal.setText("Metal");
+
+        chb_registro_science.setText("Science");
+
+        chb_registro_art.setText("Art");
+
+        chb_registro_anime.setText("Anime");
+
+        chb_registro_musica.setText("Musica");
+
+        chb_registro_saltar.setText("Saltar");
+
+        chb_registro_biz.setText("Biz");
+
+        chb_registro_sports.setText("Sports");
+
+        chb_registro_news.setText("News");
+
+        chb_registro_tvshows.setText("TV Shows");
+
+        chb_registro_movies.setText("Movies");
+
+        bt_registro_signup.setText("Registrar");
 
         javax.swing.GroupLayout jd_registroLayout = new javax.swing.GroupLayout(jd_registro.getContentPane());
         jd_registro.getContentPane().setLayout(jd_registroLayout);
@@ -177,6 +237,39 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_registroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_registroLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bt_registrar_selectFoto)
+                            .addGroup(jd_registroLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lb_registro_foto)))
+                        .addGap(57, 57, 57)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chb_registro_correr)
+                            .addComponent(chb_registro_bailar)
+                            .addComponent(chb_registro_cantar)
+                            .addComponent(chb_registro_comer)
+                            .addComponent(chb_registro_viajar)
+                            .addComponent(chb_registro_nadar))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chb_registro_musica)
+                            .addComponent(chb_registro_anime)
+                            .addComponent(chb_registro_art)
+                            .addComponent(chb_registro_science)
+                            .addComponent(chb_registro_metal)
+                            .addComponent(chb_registro_techno))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chb_registro_movies)
+                            .addComponent(chb_registro_tvshows)
+                            .addComponent(chb_registro_news)
+                            .addComponent(chb_registro_sports)
+                            .addComponent(chb_registro_biz)
+                            .addComponent(chb_registro_saltar))
+                        .addContainerGap(7, Short.MAX_VALUE))
                     .addGroup(jd_registroLayout.createSequentialGroup()
                         .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -200,28 +293,31 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(tf_registro_user)
                             .addComponent(sp_registro_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tf_registro_passwrd)
-                            .addComponent(tf_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jd_registroLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
-                            .addGroup(jd_registroLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lb_registro_foto)))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                            .addComponent(tf_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_registro_signup)
+                        .addGap(66, 66, 66))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_registroLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(130, 130, 130))
         );
         jd_registroLayout.setVerticalGroup(
             jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_registroLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(tf_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(tf_registro_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_registroLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(tf_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(tf_registro_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_registroLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(bt_registro_signup)))
                 .addGap(18, 18, 18)
                 .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -236,13 +332,52 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(rb_m)
                     .addComponent(rm_f)
                     .addComponent(checkox_registro))
-                .addGap(37, 37, 37)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lb_registro_foto)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jd_registroLayout.createSequentialGroup()
+                            .addComponent(chb_registro_musica)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_anime)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_art)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_science)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_metal)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_techno))
+                        .addGroup(jd_registroLayout.createSequentialGroup()
+                            .addComponent(chb_registro_correr)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_bailar)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_cantar)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_comer)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_viajar)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_nadar))
+                        .addGroup(jd_registroLayout.createSequentialGroup()
+                            .addComponent(chb_registro_movies)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_tvshows)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_news)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_sports)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_biz)
+                            .addGap(18, 18, 18)
+                            .addComponent(chb_registro_saltar))))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addComponent(bt_registrar_selectFoto)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -338,7 +473,7 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void bt_registrar_selectFotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registrar_selectFotoMouseClicked
         JFileChooser fc =new JFileChooser();
         FileFilter filtro = new FileNameExtensionFilter("Imagenes", "jpg","png","jpeg","gif");
         fc.setFileFilter(filtro);
@@ -349,7 +484,7 @@ public class Main extends javax.swing.JFrame {
             Image img = Toolkit.getDefaultToolkit().createImage(archivo.getPath()).getScaledInstance(180, 220, 0);
             this.lb_registro_foto.setIcon(new ImageIcon(img));
         }
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_bt_registrar_selectFotoMouseClicked
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         jd_registro.pack();
@@ -394,13 +529,33 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_registrar_selectFoto;
+    private javax.swing.JButton bt_registro_signup;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox chb_registro_anime;
+    private javax.swing.JCheckBox chb_registro_art;
+    private javax.swing.JCheckBox chb_registro_bailar;
+    private javax.swing.JCheckBox chb_registro_biz;
+    private javax.swing.JCheckBox chb_registro_cantar;
+    private javax.swing.JCheckBox chb_registro_comer;
+    private javax.swing.JCheckBox chb_registro_correr;
+    private javax.swing.JCheckBox chb_registro_metal;
+    private javax.swing.JCheckBox chb_registro_movies;
+    private javax.swing.JCheckBox chb_registro_musica;
+    private javax.swing.JCheckBox chb_registro_nadar;
+    private javax.swing.JCheckBox chb_registro_news;
+    private javax.swing.JCheckBox chb_registro_saltar;
+    private javax.swing.JCheckBox chb_registro_science;
+    private javax.swing.JCheckBox chb_registro_sports;
+    private javax.swing.JCheckBox chb_registro_techno;
+    private javax.swing.JCheckBox chb_registro_tvshows;
+    private javax.swing.JCheckBox chb_registro_viajar;
     private javax.swing.JCheckBox checkox_registro;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
