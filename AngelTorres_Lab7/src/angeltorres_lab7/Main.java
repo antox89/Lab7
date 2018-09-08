@@ -938,7 +938,6 @@ public class Main extends javax.swing.JFrame {
         jMenu1.add(jmi_login);
 
         jmi_registro.setText("Registro");
-        jmi_registro.setEnabled(false);
         jmi_registro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_registroActionPerformed(evt);
@@ -1631,7 +1630,7 @@ public class Main extends javax.swing.JFrame {
         tpane1.setVisible(false);
                 jmi_login.setEnabled(true);
                 jmi_logout.setEnabled(false);
-                jmi_registro.setEnabled(false);
+                jmi_registro.setEnabled(true);
     }//GEN-LAST:event_jmi_logoutActionPerformed
 
     public void modificarCuenta(){
