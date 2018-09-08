@@ -32,6 +32,13 @@ public class Main extends javax.swing.JFrame {
             jl_usuarioRegistrados.setModel(modelo);
         }
 
+        if (flag == 1) {
+            adminUsuario au = new adminUsuario("./users.txt");
+            au.cargarArchivoT();
+            DefaultComboBoxModel modCB = new DefaultComboBoxModel(au.getListaUsuarios().toArray());
+            cb_cuenta_perfil.setModel(modCB);
+        }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -1090,127 +1097,160 @@ public class Main extends javax.swing.JFrame {
         }
         ///
 
-        //u.agregarInteres(inter);
-        adminUsuario au = new adminUsuario("./users.att");
-        adminUsuario auT = new adminUsuario("./users.txt");
-
-        if(au.buscar(usuario) == -1){
-            
-        }else{
-            
+        ///
+        if (chb_registro_movies.isSelected()) {
+            interes = "Movies";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
         }
-        
-        
+        if (chb_registro_tvshows.isSelected()) {
+            interes = "TV Shows";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        if (chb_registro_news.isSelected()) {
+            interes = "News";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
 
+        if (chb_registro_sports.isSelected()) {
+            interes = "Sports";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+
+        if (chb_registro_biz.isSelected()) {
+            interes = "Biz";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+
+        if (chb_registro_saltar.isSelected()) {
+            interes = "Saltar";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        ///
+
+        //u.agregarInteres(inter);
+        //adminUsuario au = new adminUsuario("./users.att");
+        
+        adminUsuario auT = new adminUsuario("./users.txt");
+        //auT.cargarArchivoT();
+        
+        auT.agregarUsuario(uT);
+
+        //au.cargarArchivo();
+
+        /*
+        if (auT.buscar(usuario) == 0) {
+            System.out.println("Aquí está");
+        } else {
+            System.out.println("No está");
+        }*/
+        
         if (!tf_registro_nombre.getText().equals("")) {
-
             if (!tf_registro_passwrd.getText().equals("")) {
-
                 if (!tf_registro_user.getText().equals("")) {
-
                     if (edad >= 18 && edad <= 99) {
-
                         if (cI >= 10) {
-
                             if (!descripcion.isEmpty()) {
-                                
                                 if (tf_registro_nombre.getText().matches("[a-zA-Z]+$")) {
-                                    
-                                    System.out.println("wohoooo");
-                                try {
 
-                                    if (au.buscar(usuario) == -1) {
+                                    //if (auT.buscar(usuario) == 0) {
+                                    if (password.length() >= 8) {
 
-                                        if (password.length() >= 3) {
+                                        try {
 
-                                            auT.agregarUsuario(uT);
                                             auT.escribirTexto();
 
-                                            au.agregarUsuario(u);
-                                            DefaultComboBoxModel modeloCB = 
-                                                    new DefaultComboBoxModel(
-                                                            au.getListaUsuarios().
+                                            //au.agregarUsuario(u);
+                                            //au.escribirArchivo();
+                                            DefaultComboBoxModel modeloCB
+                                                    = new DefaultComboBoxModel(
+                                                            auT.getListaUsuarios().
                                                                     toArray());
-                                            modeloCB.addElement(au);
+                                            //modeloCB.addElement(au.getListaUsuarios().toArray());
                                             cb_cuenta_perfil.setModel(modeloCB);
-                                            au.escribirArchivo();
-                                            
-                                            
-                                            lb_registro_foto.setIcon(lb_registro_foto.getIcon());
-                                            tf_registro_nombre.setText("");
-                                            tf_registro_user.setText("");
-                                            tf_registro_passwrd.setText("");
-                                            sp_registro_edad.setValue(18);
-                                            ta_registro_descripcion.setText("");
-                                            
-                                            
-                                            
-                                        } else {
-                                            System.out.println("Password muy corto");
+
+                                            mensaje("Usuario Registrado con éxito");
+
+                                            limpiarRegistro();
+
+                                        } catch (IOException ex) {
+
                                         }
 
                                     } else {
-                                        System.out.println("Ya existe el usuario");
+                                        mensaje("Password muy corto");
                                     }
 
-                                } catch (IOException ex) {
-
+                                    //} else {
+                                    //    System.out.println("Ya existe ese usuario");
+                                    //}
+                                } else {
+                                    mensaje("Escriba un nombre correcto");
                                 }
-            
-                                }
-                                else{
-                                    System.out.println("Escriba un nombre correcto");
-                                }
-                                
 
                             } else {
-                                System.out.println("Tiene que escribir una descripción");
+                                mensaje("Tiene que escribir una descripción");
                             }
 
                         } else {
-                            System.out.println("Tiene que ingresar 10 gustos.");
+                            mensaje("Tiene que ingresar 10 gustos.");
                         }
 
                     } else {
-                        System.out.println("Ingrese una edad correcta.");
+                        mensaje("Ingrese una edad correcta.");
                     }
 
                 } else {
-                    System.out.println("Ingrese un usuario");
+                    mensaje("Ingrese un usuario");
                 }
 
             } else {
-                System.out.println("Ingrese la contraseña");
+                mensaje("Ingrese la contraseña");
             }
         } else {
-            System.out.println("Ingrese un nombre");
+            mensaje("Ingrese nombre");
         }
 
-        
 
     }//GEN-LAST:event_bt_registro_signupMouseClicked
 
+    public void limpiarRegistro() {
+        lb_registro_foto.setIcon(lb_registro_foto.getIcon());
+        tf_registro_nombre.setText("");
+        tf_registro_user.setText("");
+        tf_registro_passwrd.setText("");
+        sp_registro_edad.setValue(18);
+        ta_registro_descripcion.setText("");
+
+        chb_registro_anime.setSelected(false);
+    }
+
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        DefaultListModel lista = (DefaultListModel) jl_usuarioRegistrados.getModel();
+        
+        jl_usuarioRegistrados.setModel(new DefaultListModel());
+        
+        adminUsuario au = new adminUsuario("./users.txt");
+            au.cargarArchivoT();
+            DefaultListModel modelo = (DefaultListModel) jl_usuarioRegistrados.getModel();
 
-        adminUsuario au = new adminUsuario("./users.att");
-        au.cargarArchivo();
-        System.out.println(au.getListaUsuarios().get(0).getNombre());
-
-        String interes = "", s = "";
-        for (int i = 0; i < au.getListaUsuarios().size(); i++) {
-
-            interes += au.getListaUsuarios().get(i).getListaIntereses().toString();
-            //for (Interes object : au.getListaUsuarios().get(i).getListaIntereses()) {
-            //    interes+=object.getInteres();
-            //}
-
-        }
-        lista.addElement(au.getListaUsuarios().toString());
-        jl_usuarioRegistrados.setModel(lista);
-        System.out.println(s);
-        System.out.println(interes);
-        ta_test.append(interes);
+            String s = "";
+            for (int i = 0; i < au.getListaUsuarios().size(); i++) {
+                modelo.add(i, au.getListaUsuarios().get(i).getNombre());
+                s+=au.getListaUsuarios().get(i).getListaIntereses().toString();
+            }
+            System.out.println(s);
+            jl_usuarioRegistrados.setModel(modelo);
 
 
     }//GEN-LAST:event_jButton2MouseClicked
@@ -1256,7 +1296,6 @@ public class Main extends javax.swing.JFrame {
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         if (jTabbedPane1.getSelectedIndex() == 0) {
             flag = 0;
-
         }
         if (jTabbedPane1.getSelectedIndex() == 1) {
             flag = 1;
