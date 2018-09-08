@@ -1,1 +1,1 @@
-angel;angel;angel;M;Correr,Bailar,;Regular;angel;torres;torres;M;Correr,Bailar,;Regular;torres;torres;torres;M;Correr,Bailar,Cantar,;Regular;
+angel;angel;angel;18;Correr,Bailar,Cantar,Comer,;Premium;M;nuevo;nuevo;nuevo;21;Correr,Bailar,Comer,;Regular;F;vegeta;vegeta;vegeta;22;Bailar,Cantar,;Regular;M;

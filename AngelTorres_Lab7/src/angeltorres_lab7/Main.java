@@ -1,4 +1,3 @@
-
 package angeltorres_lab7;
 
 import java.awt.Image;
@@ -7,26 +6,26 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
 public class Main extends javax.swing.JFrame {
 
-    
     public Main() {
         initComponents();
-        
-        if(rb_m.isSelected()){
-            
+        this.setLocationRelativeTo(null);
+
+        if (rb_m.isSelected()) {
+
         }
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -41,6 +40,11 @@ public class Main extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jd_login = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        tf_login_user = new javax.swing.JTextField();
+        tf_login_password = new javax.swing.JPasswordField();
+        jButton7 = new javax.swing.JButton();
         jd_registro = new javax.swing.JDialog();
         jLabel5 = new javax.swing.JLabel();
         tf_registro_nombre = new javax.swing.JTextField();
@@ -91,16 +95,16 @@ public class Main extends javax.swing.JFrame {
         jlb_foto = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        tf_cuenta_nombre = new javax.swing.JTextField();
+        tf_cuenta_user = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        tf_cuenta_password = new javax.swing.JPasswordField();
         jLabel15 = new javax.swing.JLabel();
         rb_cuenta_m = new javax.swing.JRadioButton();
         rb_cuenta_f = new javax.swing.JRadioButton();
         jLabel16 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        sp_cuenta_edad = new javax.swing.JSpinner();
+        checkbox_cuenta_premium = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         chb_registro_correr1 = new javax.swing.JCheckBox();
         chb_registro_bailar1 = new javax.swing.JCheckBox();
@@ -122,13 +126,16 @@ public class Main extends javax.swing.JFrame {
         chb_registro_movies1 = new javax.swing.JCheckBox();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tf_cuenta_otroInteres = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        ta_cuenta_interes = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        cb_cuenta_perfil = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -193,15 +200,51 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
+        jd_login.setTitle("Ingreso :: Tander");
+
+        jLabel19.setText("Usuario:");
+
+        jLabel20.setText("Password:");
+
+        jButton7.setText("Sign In");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
         jd_login.getContentPane().setLayout(jd_loginLayout);
         jd_loginLayout.setHorizontalGroup(
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton7)
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_login_user)
+                            .addComponent(tf_login_password, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jd_loginLayout.setVerticalGroup(
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_login_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(jButton7)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jd_registro.setTitle("Tander :: Registro");
@@ -457,21 +500,20 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jButton2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(285, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(94, 94, 94))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(166, 166, 166))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,13 +523,14 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(194, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2)
-                        .addGap(46, 46, 46)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(194, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76))))
         );
 
         jTabbedPane1.addTab("Perfil", jPanel1);
@@ -508,9 +551,9 @@ public class Main extends javax.swing.JFrame {
 
         jLabel16.setText("Edad:");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(18, 18, 99, 1));
+        sp_cuenta_edad.setModel(new javax.swing.SpinnerNumberModel(18, 18, 99, 1));
 
-        jCheckBox1.setText("Premium");
+        checkbox_cuenta_premium.setText("Premium");
 
         chb_registro_correr1.setText("Correr");
 
@@ -552,9 +595,9 @@ public class Main extends javax.swing.JFrame {
 
         jLabel18.setText("Otro:");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane5.setViewportView(jTextArea2);
+        ta_cuenta_interes.setColumns(20);
+        ta_cuenta_interes.setRows(5);
+        jScrollPane5.setViewportView(ta_cuenta_interes);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -569,7 +612,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField4))
+                        .addComponent(tf_cuenta_otroInteres))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addComponent(jLabel17)
@@ -613,7 +656,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_cuenta_otroInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -666,6 +709,8 @@ public class Main extends javax.swing.JFrame {
 
         jButton6.setText("Agregar Interés");
 
+        cb_cuenta_perfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mi Perfil" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -687,15 +732,15 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
+                                    .addComponent(tf_cuenta_nombre)
+                                    .addComponent(tf_cuenta_user, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPasswordField1))
+                                        .addComponent(tf_cuenta_password))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel15)
                                         .addGap(27, 27, 27)
@@ -706,13 +751,14 @@ public class Main extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel16)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(sp_cuenta_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(40, 40, 40)
-                                        .addComponent(jCheckBox1)))))
-                        .addGap(89, 89, 89)
-                        .addComponent(jButton4)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton3))
+                                        .addComponent(checkbox_cuenta_premium)))))
+                        .addGap(130, 130, 130)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4)
+                            .addComponent(cb_cuenta_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -730,17 +776,15 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton3))
+                            .addComponent(tf_cuenta_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tf_cuenta_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tf_cuenta_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
@@ -749,9 +793,15 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1)))
-                    .addComponent(jlb_foto))
+                            .addComponent(sp_cuenta_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(checkbox_cuenta_premium)))
+                    .addComponent(jlb_foto)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addGap(41, 41, 41)
+                        .addComponent(jButton3)
+                        .addGap(38, 38, 38)
+                        .addComponent(cb_cuenta_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -764,9 +814,40 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cuenta", jPanel2);
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 918, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 625, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 918, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 625, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab4", jPanel5);
+
         jMenu1.setText("Tander");
 
         jMenuItem1.setText("Log In");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem4.setText("Registro");
@@ -803,12 +884,12 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_registrar_selectFotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registrar_selectFotoMouseClicked
-        JFileChooser fc =new JFileChooser();
-        FileFilter filtro = new FileNameExtensionFilter("Imagenes", "jpg","png","jpeg","gif");
+        JFileChooser fc = new JFileChooser();
+        FileFilter filtro = new FileNameExtensionFilter("Imagenes", "jpg", "png", "jpeg", "gif");
         fc.setFileFilter(filtro);
         File archivo;
         int op = fc.showOpenDialog(this);
-        if (op == JFileChooser.APPROVE_OPTION){
+        if (op == JFileChooser.APPROVE_OPTION) {
             archivo = fc.getSelectedFile();
             Image img = Toolkit.getDefaultToolkit().createImage(archivo.getPath()).getScaledInstance(180, 220, 0);
             this.lb_registro_foto.setIcon(new ImageIcon(img));
@@ -823,130 +904,185 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void bt_registro_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_signupMouseClicked
-        
-        int cI=0, edad;
+
+        int cI = 0, edad;
         String nombre, usuario, password, sexo, premium;
         Icon foto;
-        
+
         String interes;
-        Interes inter = new Interes("");
-        
+
         foto = lb_registro_foto.getIcon();
-        
+
         nombre = tf_registro_nombre.getText();
         usuario = tf_registro_user.getText();
         password = tf_registro_passwrd.getText();
-        
-        if(rb_m.isSelected()){
-            sexo="M";
-        }else{
-            sexo="F";
+        edad = Integer.parseInt(sp_registro_edad.getValue().toString());
+
+        if (rb_m.isSelected()) {
+            sexo = "M";
+        } else {
+            sexo = "F";
         }
-        
-        if(checkox_registro.isSelected()){
+
+        if (checkox_registro.isSelected()) {
             premium = "Premium";
-        }else{
-            premium="Regular";
+        } else {
+            premium = "Regular";
         }
-        
-        
-        
-        
-        Usuario u = new Usuario(nombre, sexo, usuario, password, usuario, foto, premium);
-        
-        
-        //inter.setInteres(interes);
-        
-        if(chb_registro_correr.isSelected()){
+
+        Usuario u = new Usuario(nombre, sexo, usuario, password, usuario, foto, premium,edad);
+
+        if (chb_registro_correr.isSelected()) {
             interes = "Correr";
-            //inter.setInteres(interes+",");
             u.agregarInteres(new Interes(interes));
             cI++;
         }
-        if(chb_registro_bailar.isSelected()){
+        if (chb_registro_bailar.isSelected()) {
             interes = "Bailar";
             u.agregarInteres(new Interes(interes));
             cI++;
         }
-        if(chb_registro_cantar.isSelected()){
+        if (chb_registro_cantar.isSelected()) {
             interes = "Cantar";
             u.agregarInteres(new Interes(interes));
             cI++;
         }
         
+        if (chb_registro_comer.isSelected()) {
+            interes = "Comer";
+            u.agregarInteres(new Interes(interes));
+            cI++;
+        }
+
         //u.agregarInteres(inter);
-        
         adminUsuario au = new adminUsuario("./users.att");
         adminUsuario auT = new adminUsuario("./users.txt");
-        
+
         try {
             auT.agregarUsuario(u);
             auT.escribirTexto();
-            
-            if(cI>2){
-            
-            if(au.buscar(usuario) ==-1){
-            
-            if(password.length()>=3){
-            //u.agregarInteres(inter);
-            au.agregarUsuario(u);
-            
-            au.escribirArchivo();
-            }else{
-            System.out.println("Password muy corto");
+
+            if (cI >= 2) {
+
+                if (au.buscar(usuario) == -1) {
+
+                    if (password.length() >= 3) {
+
+                        au.agregarUsuario(u);
+                        DefaultComboBoxModel modeloCB = new DefaultComboBoxModel(au.getListaUsuarios().toArray());
+                        modeloCB.addElement(au);
+                        cb_cuenta_perfil.setModel(modeloCB);
+                        au.escribirArchivo();
+                    } else {
+                        System.out.println("Password muy corto");
+                    }
+
+                } else {
+                    System.out.println("Ya existe el usuario");
+                }
+
+            } else {
+
+                System.out.println("Ingrese más de 2 intereses");
+                
             }
-            
-            }else{
-            System.out.println("Ya existe el usuario");
-            }
-            
-            }else{
-            
-            System.out.println("Ingrese 2 intereses");
-            cI=0;
-            }
-            
-            
+
         } catch (IOException ex) {
-            
+
         }
-        
-        
+
         lb_registro_foto.setIcon(lb_registro_foto.getIcon());
         tf_registro_nombre.setText("");
         tf_registro_user.setText("");
         tf_registro_passwrd.setText("");
-        
+        sp_registro_edad.setValue(18);
+
     }//GEN-LAST:event_bt_registro_signupMouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        DefaultListModel lista = (DefaultListModel)jl_usuarioRegistrados.getModel();
-        
+        DefaultListModel lista = (DefaultListModel) jl_usuarioRegistrados.getModel();
+
         adminUsuario au = new adminUsuario("./users.att");
         au.cargarArchivo();
         System.out.println(au.getListaUsuarios().get(0).getNombre());
-        
-        String interes="", s="";
+
+        String interes = "", s = "";
         for (int i = 0; i < au.getListaUsuarios().size(); i++) {
-            
-            interes+=au.getListaUsuarios().get(i).getListaIntereses().toString();
+
+            interes += au.getListaUsuarios().get(i).getListaIntereses().toString();
             //for (Interes object : au.getListaUsuarios().get(i).getListaIntereses()) {
             //    interes+=object.getInteres();
             //}
-            
+
         }
         lista.addElement(au.getListaUsuarios().toString());
         jl_usuarioRegistrados.setModel(lista);
         System.out.println(s);
         System.out.println(interes);
         ta_test.append(interes);
-        
-        
+
+
     }//GEN-LAST:event_jButton2MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        jd_login.pack();
+        jd_login.setModal(true);
+        jd_login.setLocationRelativeTo(this);
+        jd_login.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        adminUsuario au = new adminUsuario("./users.txt");
+        //adminUsuario au = new adminUsuario("./users.att");
+        au.cargarArchivoT();
+        //au.cargarArchivo();
+        
+        
+        
+        boolean login = false;
+        
+        if(tf_login_user.getText().equals("") || tf_login_password.getText().equals("")){
+            mensaje("Ingrese todos los campos");
+            
+            
+        }else{
+        
+        for (int i = 0; i < au.getListaUsuarios().size(); i++) {
+            
+            if(tf_login_user.getText().equals(au.getListaUsuarios().get(i).getUsuario()) && tf_login_password.getText().equals(au.getListaUsuarios().get(i).getPassword())){
+                
+                login=true;
+            }
+            
+        }
+        if(login){
+            System.out.println("sdsdgdg");
+            System.out.println(au.getListaUsuarios().get(0).getNombre());
+            System.out.println(au.getListaUsuarios().get(1).getNombre());
+        }else{
+            mensaje("Usuario incorrecto");
+        }
+        } 
+//        
+//        for (Usuario u : au.getListaUsuarios()) {
+//            if(tf_login_user.getText().equals(u.getUsuario()) && tf_login_password.getText().equals(u.getPassword())){
+//                
+//                System.out.println("Welcome!!"+u.getNombre());
+//                
+//                break;
+//                
+//            }else{
+//                System.out.println("No existe");
+//            }
+//        }
+        
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    public void mensaje(String s){
+        JOptionPane.showMessageDialog(this,s);
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -984,6 +1120,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_registro_signup;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> cb_cuenta_perfil;
     private javax.swing.JCheckBox chb_registro_anime;
     private javax.swing.JCheckBox chb_registro_anime1;
     private javax.swing.JCheckBox chb_registro_art;
@@ -1020,6 +1157,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JCheckBox chb_registro_tvshows1;
     private javax.swing.JCheckBox chb_registro_viajar;
     private javax.swing.JCheckBox chb_registro_viajar1;
+    private javax.swing.JCheckBox checkbox_cuenta_premium;
     private javax.swing.JCheckBox checkox_registro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1027,7 +1165,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1039,7 +1177,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1056,20 +1196,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JDialog jd_login;
     private javax.swing.JDialog jd_mensaje;
     private javax.swing.JDialog jd_registro;
@@ -1080,10 +1216,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_cuenta_m;
     private javax.swing.JRadioButton rb_m;
     private javax.swing.JRadioButton rm_f;
+    private javax.swing.JSpinner sp_cuenta_edad;
     private javax.swing.JSpinner sp_registro_edad;
+    private javax.swing.JTextArea ta_cuenta_interes;
     private javax.swing.JTextArea ta_test;
+    private javax.swing.JTextField tf_cuenta_nombre;
+    private javax.swing.JTextField tf_cuenta_otroInteres;
+    private javax.swing.JPasswordField tf_cuenta_password;
+    private javax.swing.JTextField tf_cuenta_user;
+    private javax.swing.JPasswordField tf_login_password;
+    private javax.swing.JTextField tf_login_user;
     private javax.swing.JTextField tf_registro_nombre;
     private javax.swing.JPasswordField tf_registro_passwrd;
     private javax.swing.JTextField tf_registro_user;
     // End of variables declaration//GEN-END:variables
+    Usuario usuario_seleccionado;
 }

@@ -13,6 +13,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class adminUsuario {
@@ -52,6 +53,17 @@ public class adminUsuario {
         }
         return -1;
     }
+
+    @Override
+    public String toString() {
+        String s="";
+        for (Usuario u : listaUsuarios) {
+            return s+=u.getNombre();
+        }
+        return "";
+    }
+    
+    
     
     public void cargarArchivo(){
         try{
@@ -114,12 +126,14 @@ public class adminUsuario {
                 bw.write(u.getNombre()+";");
                 bw.write(u.getUsuario()+";");
                 bw.write(u.getPassword()+";");
-                bw.write(u.getSexo()+";");
+                bw.write(u.getEdad()+";");
+                
                 for (Interes in : u.getListaIntereses()) {
                     bw.write(in.getInteres()+",");
                 }
                 bw.write(";");
                 bw.write(u.getPremium()+";");
+                bw.write(u.getSexo()+";");
                 
             }
             bw.flush();
@@ -131,5 +145,38 @@ public class adminUsuario {
         
     }
     
+    public void cargarArchivoT() {
+        Scanner sc = null;
+        listaUsuarios = new ArrayList();
+        if (archivo.exists()) {
+            try {
+                sc = new Scanner(archivo);
+                sc.useDelimiter(";");
+                while (sc.hasNext()) {
+                    int edad;
+                    String nombre,usuario,password,premium,sexo;
+                    ArrayList<Interes> temp = new ArrayList();
+                    nombre = sc.next();
+                    usuario = sc.next();
+                    password = sc.next();
+                    edad = sc.nextInt();
+                    
+                    Scanner s2 = new Scanner(sc.next());
+                    s2.useDelimiter(",");
+                    while (s2.hasNext()) {
+                        temp.add(new Interes(s2.next()));
+                    }
+                    premium = sc.next();
+                    sexo = sc.next();
+                    
+                    listaUsuarios.add(new Usuario(nombre, sexo, usuario, password, premium, edad));
+                    listaUsuarios.get(listaUsuarios.size() - 1).setListaIntereses(temp);;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            sc.close();
+        }
+    }
 
 }

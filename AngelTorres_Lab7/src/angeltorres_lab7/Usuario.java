@@ -10,6 +10,7 @@ import javax.swing.Icon;
 public class Usuario implements Serializable{
     
     private String nombre, sexo, usuario, password, descripcion;
+    private int edad;
     private Icon foto;
     private ArrayList<Interes> listaIntereses = new ArrayList();
     private ArrayList<Amigo> listaAmigos = new ArrayList();
@@ -24,7 +25,7 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
-    public Usuario(String nombre, String sexo, String usuario, String password, String descripcion, Icon foto, String premium) {
+    public Usuario(String nombre, String sexo, String usuario, String password, String descripcion, Icon foto, String premium, int edad) {
         this.nombre = nombre;
         this.sexo = sexo;
         this.usuario = usuario;
@@ -32,6 +33,16 @@ public class Usuario implements Serializable{
         this.descripcion = descripcion;
         this.foto = foto;
         this.premium = premium;
+        this.edad = edad;
+    }
+    
+    public Usuario(String nombre, String sexo, String usuario, String password, String premium, int edad) {
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.usuario = usuario;
+        this.password = password;
+        this.premium = premium;
+        this.edad = edad;
     }
     
     //
@@ -59,6 +70,32 @@ public class Usuario implements Serializable{
         this.listaBloqueados.add(b);
     }
     //
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public ArrayList<Cita> getListaCalendario() {
+        return listaCalendario;
+    }
+
+    public void setListaCalendario(ArrayList<Cita> listaCalendario) {
+        this.listaCalendario = listaCalendario;
+    }
+
+    public ArrayList<Bloqueado> getListaBloqueados() {
+        return listaBloqueados;
+    }
+
+    public void setListaBloqueados(ArrayList<Bloqueado> listaBloqueados) {
+        this.listaBloqueados = listaBloqueados;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;
