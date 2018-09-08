@@ -1,1 +1,1 @@
-angel;angel;angel;18;Correr,Bailar,Cantar,Comer,;Premium;M;nuevo;nuevo;nuevo;21;Correr,Bailar,Comer,;Regular;F;vegeta;vegeta;vegeta;22;Bailar,Cantar,;Regular;M;
+angel;angel;angel;23;Correr,Bailar,Cantar,Comer,;angel;Premium;M;torres;torres;torres;18;Correr,Bailar,;torres;Premium;M;goku;goku;goku;21;Correr,Bailar,;goku;Regular;M;picolo;picolo;picolo;47;Bailar,Comer,;picolo;Premium;M;

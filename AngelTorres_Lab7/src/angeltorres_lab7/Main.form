@@ -194,45 +194,6 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="bt_registrar_selectFoto" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="lb_registro_foto" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="chb_registro_correr" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_bailar" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_cantar" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_comer" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_viajar" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_nadar" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="chb_registro_musica" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_anime" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_art" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_science" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_metal" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_techno" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="chb_registro_movies" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_tvshows" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_news" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_sports" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_biz" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="chb_registro_saltar" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="7" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -263,25 +224,46 @@
                               <Component id="tf_registro_passwrd" alignment="0" max="32767" attributes="0"/>
                               <Component id="tf_registro_nombre" min="-2" pref="257" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="bt_registro_signup" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="bt_registrar_selectFoto" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lb_registro_foto" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                  <Component id="bt_registro_signup" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tf_registro_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -291,16 +273,17 @@
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tf_registro_user" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_registro_passwrd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="bt_registro_signup" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_registro_passwrd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -314,57 +297,21 @@
                       <Component id="rm_f" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="checkox_registro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lb_registro_foto" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="chb_registro_musica" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_anime" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_art" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_science" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_metal" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_techno" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lb_registro_foto" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="chb_registro_correr" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_bailar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_cantar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_comer" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_viajar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_nadar" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="chb_registro_movies" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_tvshows" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_news" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_sports" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_biz" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="chb_registro_saltar" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="bt_registrar_selectFoto" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="bt_registrar_selectFoto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="79" max="32767" attributes="0"/>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <Component id="bt_registro_signup" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -450,109 +397,226 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Intereses:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_correr">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Correr"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_bailar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Bailar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_cantar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cantar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_comer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Comer"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_viajar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Viajar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_nadar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nadar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_techno">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Techno"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_metal">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Metal"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_science">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Science"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_art">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Art"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_anime">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Anime"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_musica">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Musica"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_saltar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Saltar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_biz">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Biz"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_sports">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sports"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_news">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="News"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_tvshows">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="TV Shows"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="chb_registro_movies">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Movies"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="bt_registro_signup">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Registrar"/>
+            <Property name="text" type="java.lang.String" value="Crear Usuario"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_registro_signupMouseClicked"/>
           </Events>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="ta_registro_descripcion">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel22">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel6">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="chb_registro_correr" min="-2" max="-2" attributes="0"/>
+                          <Component id="chb_registro_bailar" min="-2" max="-2" attributes="0"/>
+                          <Component id="chb_registro_cantar" min="-2" max="-2" attributes="0"/>
+                          <Component id="chb_registro_comer" min="-2" max="-2" attributes="0"/>
+                          <Component id="chb_registro_viajar" min="-2" max="-2" attributes="0"/>
+                          <Component id="chb_registro_nadar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="chb_registro_anime" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_art" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_science" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_metal" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_techno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_musica" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="chb_registro_sports" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_biz" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_saltar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_movies" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_tvshows" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_news" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="chb_registro_musica" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_anime" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_art" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_science" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_metal" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_techno" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="chb_registro_correr" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_bailar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_cantar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_comer" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_viajar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_nadar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="chb_registro_movies" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_tvshows" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_news" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_sports" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_biz" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="chb_registro_saltar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_correr">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Correr"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_bailar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bailar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_cantar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cantar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_comer">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Comer"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_viajar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Viajar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_nadar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nadar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_techno">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Techno"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_metal">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Metal"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_science">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Science"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_art">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Art"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_anime">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Anime"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_musica">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Musica"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_saltar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Saltar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_biz">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Biz"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_sports">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sports"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_news">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="News"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_tvshows">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="TV Shows"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chb_registro_movies">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Movies"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Intereses:"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
@@ -634,6 +698,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jTabbedPane1StateChanged"/>
+      </Events>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -649,11 +716,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="178" max="-2" attributes="0"/>
@@ -669,27 +731,28 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="348" max="-2" attributes="0"/>
-                              <EmptySpace pref="194" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="176" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="348" max="-2" attributes="0"/>
+                      <EmptySpace pref="194" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="176" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -716,7 +779,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Usuarios"/>
+                <Property name="text" type="java.lang.String" value="Usuarios Registrados"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
@@ -757,15 +820,27 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jlb_foto" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jlb_foto" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -872,12 +947,16 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" pref="165" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButton5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -1218,6 +1297,26 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="ta_cuenta_descripcion">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel21">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

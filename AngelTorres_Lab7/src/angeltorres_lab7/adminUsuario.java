@@ -132,6 +132,7 @@ public class adminUsuario {
                     bw.write(in.getInteres()+",");
                 }
                 bw.write(";");
+                bw.write(u.getDescripcion()+";");
                 bw.write(u.getPremium()+";");
                 bw.write(u.getSexo()+";");
                 
@@ -154,7 +155,7 @@ public class adminUsuario {
                 sc.useDelimiter(";");
                 while (sc.hasNext()) {
                     int edad;
-                    String nombre,usuario,password,premium,sexo;
+                    String nombre,usuario,password,premium,sexo,desc;
                     ArrayList<Interes> temp = new ArrayList();
                     nombre = sc.next();
                     usuario = sc.next();
@@ -166,10 +167,11 @@ public class adminUsuario {
                     while (s2.hasNext()) {
                         temp.add(new Interes(s2.next()));
                     }
+                    desc = sc.next();
                     premium = sc.next();
                     sexo = sc.next();
                     
-                    listaUsuarios.add(new Usuario(nombre, sexo, usuario, password, premium, edad));
+                    listaUsuarios.add(new Usuario(nombre, sexo, usuario, password, desc,premium, edad));
                     listaUsuarios.get(listaUsuarios.size() - 1).setListaIntereses(temp);;
                 }
             } catch (Exception e) {

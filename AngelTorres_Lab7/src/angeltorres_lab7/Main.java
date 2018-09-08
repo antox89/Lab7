@@ -21,9 +21,17 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
 
-        if (rb_m.isSelected()) {
-
+        if(flag==0){
+            adminUsuario au = new adminUsuario("./users.txt");
+            au.cargarArchivoT();
+            DefaultListModel modelo = (DefaultListModel)jl_usuarioRegistrados.getModel();
+            
+            for (int i = 0; i < au.getListaUsuarios().size(); i++) {
+                modelo.add(i, au.getListaUsuarios().get(i).getNombre());
+            }
+            jl_usuarioRegistrados.setModel(modelo);
         }
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -61,7 +69,11 @@ public class Main extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         bt_registrar_selectFoto = new javax.swing.JButton();
         lb_registro_foto = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        bt_registro_signup = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ta_registro_descripcion = new javax.swing.JTextArea();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         chb_registro_correr = new javax.swing.JCheckBox();
         chb_registro_bailar = new javax.swing.JCheckBox();
         chb_registro_cantar = new javax.swing.JCheckBox();
@@ -80,7 +92,7 @@ public class Main extends javax.swing.JFrame {
         chb_registro_news = new javax.swing.JCheckBox();
         chb_registro_tvshows = new javax.swing.JCheckBox();
         chb_registro_movies = new javax.swing.JCheckBox();
-        bt_registro_signup = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -134,6 +146,9 @@ public class Main extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         cb_cuenta_perfil = new javax.swing.JComboBox<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        ta_cuenta_descripcion = new javax.swing.JTextArea();
+        jLabel21 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -281,7 +296,18 @@ public class Main extends javax.swing.JFrame {
 
         lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp.jpg"))); // NOI18N
 
-        jLabel11.setText("Intereses:");
+        bt_registro_signup.setText("Crear Usuario");
+        bt_registro_signup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_registro_signupMouseClicked(evt);
+            }
+        });
+
+        ta_registro_descripcion.setColumns(20);
+        ta_registro_descripcion.setRows(5);
+        jScrollPane6.setViewportView(ta_registro_descripcion);
+
+        jLabel22.setText("Descripción:");
 
         chb_registro_correr.setText("Correr");
 
@@ -319,12 +345,87 @@ public class Main extends javax.swing.JFrame {
 
         chb_registro_movies.setText("Movies");
 
-        bt_registro_signup.setText("Registrar");
-        bt_registro_signup.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_registro_signupMouseClicked(evt);
-            }
-        });
+        jLabel11.setText("Intereses:");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chb_registro_correr)
+                    .addComponent(chb_registro_bailar)
+                    .addComponent(chb_registro_cantar)
+                    .addComponent(chb_registro_comer)
+                    .addComponent(chb_registro_viajar)
+                    .addComponent(chb_registro_nadar))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chb_registro_anime)
+                            .addComponent(chb_registro_art)
+                            .addComponent(chb_registro_science)
+                            .addComponent(chb_registro_metal)
+                            .addComponent(chb_registro_techno)
+                            .addComponent(chb_registro_musica))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chb_registro_sports)
+                            .addComponent(chb_registro_biz)
+                            .addComponent(chb_registro_saltar)
+                            .addComponent(chb_registro_movies)
+                            .addComponent(chb_registro_tvshows)
+                            .addComponent(chb_registro_news))))
+                .addGap(25, 25, 25))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(chb_registro_musica)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_anime)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_art)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_science)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_metal)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_techno))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(chb_registro_correr)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_bailar)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_cantar)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_comer)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_viajar)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_nadar))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(chb_registro_movies)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_tvshows)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_news)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_sports)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_biz)
+                        .addGap(18, 18, 18)
+                        .addComponent(chb_registro_saltar)))
+                .addGap(42, 42, 42))
+        );
 
         javax.swing.GroupLayout jd_registroLayout = new javax.swing.GroupLayout(jd_registro.getContentPane());
         jd_registro.getContentPane().setLayout(jd_registroLayout);
@@ -333,39 +434,6 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_registroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_registroLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bt_registrar_selectFoto)
-                            .addGroup(jd_registroLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lb_registro_foto)))
-                        .addGap(57, 57, 57)
-                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chb_registro_correr)
-                            .addComponent(chb_registro_bailar)
-                            .addComponent(chb_registro_cantar)
-                            .addComponent(chb_registro_comer)
-                            .addComponent(chb_registro_viajar)
-                            .addComponent(chb_registro_nadar))
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chb_registro_musica)
-                            .addComponent(chb_registro_anime)
-                            .addComponent(chb_registro_art)
-                            .addComponent(chb_registro_science)
-                            .addComponent(chb_registro_metal)
-                            .addComponent(chb_registro_techno))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chb_registro_movies)
-                            .addComponent(chb_registro_tvshows)
-                            .addComponent(chb_registro_news)
-                            .addComponent(chb_registro_sports)
-                            .addComponent(chb_registro_biz)
-                            .addComponent(chb_registro_saltar))
-                        .addContainerGap(7, Short.MAX_VALUE))
                     .addGroup(jd_registroLayout.createSequentialGroup()
                         .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -390,34 +458,50 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(sp_registro_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tf_registro_passwrd)
                             .addComponent(tf_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bt_registro_signup)
-                        .addGap(66, 66, 66))))
+                        .addGap(142, 142, 142)
+                        .addComponent(jLabel22))
+                    .addGroup(jd_registroLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bt_registrar_selectFoto)
+                            .addGroup(jd_registroLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lb_registro_foto)))
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_registroLayout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_registroLayout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_registroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(130, 130, 130))
+                .addComponent(bt_registro_signup)
+                .addGap(308, 308, 308))
         );
         jd_registroLayout.setVerticalGroup(
             jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_registroLayout.createSequentialGroup()
-                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(59, 59, 59)
+                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jd_registroLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
                         .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(tf_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(tf_registro_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tf_registro_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(tf_registro_passwrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jd_registroLayout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(bt_registro_signup)))
-                .addGap(18, 18, 18)
-                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(tf_registro_passwrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sp_registro_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -428,61 +512,33 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(rb_m)
                     .addComponent(rm_f)
                     .addComponent(checkox_registro))
-                .addGap(15, 15, 15)
-                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_registro_foto)
-                    .addComponent(jLabel10)
-                    .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jd_registroLayout.createSequentialGroup()
-                            .addComponent(chb_registro_musica)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_anime)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_art)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_science)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_metal)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_techno))
-                        .addGroup(jd_registroLayout.createSequentialGroup()
-                            .addComponent(chb_registro_correr)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_bailar)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_cantar)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_comer)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_viajar)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_nadar))
-                        .addGroup(jd_registroLayout.createSequentialGroup()
-                            .addComponent(chb_registro_movies)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_tvshows)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_news)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_sports)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_biz)
-                            .addGap(18, 18, 18)
-                            .addComponent(chb_registro_saltar))))
-                .addGap(18, 18, 18)
-                .addComponent(bt_registrar_selectFoto)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jd_registroLayout.createSequentialGroup()
+                        .addGroup(jd_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_registro_foto)
+                            .addComponent(jLabel10))
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_registrar_selectFoto))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(bt_registro_signup)
+                .addGap(40, 40, 40))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tander");
 
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
+
         jl_usuarioRegistrados.setModel(new DefaultListModel());
         jScrollPane1.setViewportView(jl_usuarioRegistrados);
 
-        jLabel1.setText("Usuarios");
+        jLabel1.setText("Usuarios Registrados");
 
         jButton2.setText("jButton2");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -500,10 +556,6 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
@@ -514,23 +566,25 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(166, 166, 166))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(194, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(194, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
         );
 
         jTabbedPane1.addTab("Perfil", jPanel1);
@@ -711,18 +765,32 @@ public class Main extends javax.swing.JFrame {
 
         cb_cuenta_perfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mi Perfil" }));
 
+        ta_cuenta_descripcion.setColumns(20);
+        ta_cuenta_descripcion.setRows(5);
+        jScrollPane4.setViewportView(ta_cuenta_descripcion);
+
+        jLabel21.setText("Descripción");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlb_foto)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton5)))
-                .addGap(52, 52, 52)
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlb_foto)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton5))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel21))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -805,10 +873,14 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6))
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(jButton5)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel21)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -906,7 +978,7 @@ public class Main extends javax.swing.JFrame {
     private void bt_registro_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_signupMouseClicked
 
         int cI = 0, edad;
-        String nombre, usuario, password, sexo, premium;
+        String nombre, usuario, password, sexo, premium, descripcion;
         Icon foto;
 
         String interes;
@@ -917,6 +989,7 @@ public class Main extends javax.swing.JFrame {
         usuario = tf_registro_user.getText();
         password = tf_registro_passwrd.getText();
         edad = Integer.parseInt(sp_registro_edad.getValue().toString());
+        descripcion = ta_registro_descripcion.getText();
 
         if (rb_m.isSelected()) {
             sexo = "M";
@@ -930,27 +1003,46 @@ public class Main extends javax.swing.JFrame {
             premium = "Regular";
         }
 
-        Usuario u = new Usuario(nombre, sexo, usuario, password, usuario, foto, premium,edad);
+        Usuario u = new Usuario(nombre, sexo, usuario, password, descripcion, foto, premium, edad);
+        Usuario uT= new Usuario(nombre, sexo, usuario, password, descripcion, premium, edad);
 
         if (chb_registro_correr.isSelected()) {
             interes = "Correr";
             u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
             cI++;
         }
         if (chb_registro_bailar.isSelected()) {
             interes = "Bailar";
             u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
             cI++;
         }
         if (chb_registro_cantar.isSelected()) {
             interes = "Cantar";
             u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
             cI++;
         }
-        
+
         if (chb_registro_comer.isSelected()) {
             interes = "Comer";
             u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        
+        if (chb_registro_viajar.isSelected()) {
+            interes = "Viajar";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        
+        if (chb_registro_nadar.isSelected()) {
+            interes = "Nadar";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
             cI++;
         }
 
@@ -959,8 +1051,7 @@ public class Main extends javax.swing.JFrame {
         adminUsuario auT = new adminUsuario("./users.txt");
 
         try {
-            auT.agregarUsuario(u);
-            auT.escribirTexto();
+            
 
             if (cI >= 2) {
 
@@ -968,6 +1059,9 @@ public class Main extends javax.swing.JFrame {
 
                     if (password.length() >= 3) {
 
+                        auT.agregarUsuario(uT);
+                        auT.escribirTexto();
+                        
                         au.agregarUsuario(u);
                         DefaultComboBoxModel modeloCB = new DefaultComboBoxModel(au.getListaUsuarios().toArray());
                         modeloCB.addElement(au);
@@ -984,7 +1078,7 @@ public class Main extends javax.swing.JFrame {
             } else {
 
                 System.out.println("Ingrese más de 2 intereses");
-                
+
             }
 
         } catch (IOException ex) {
@@ -1036,53 +1130,52 @@ public class Main extends javax.swing.JFrame {
         //adminUsuario au = new adminUsuario("./users.att");
         au.cargarArchivoT();
         //au.cargarArchivo();
-        
-        
-        
+
         boolean login = false;
-        
-        if(tf_login_user.getText().equals("") || tf_login_password.getText().equals("")){
+
+        if (tf_login_user.getText().equals("") || tf_login_password.getText().equals("")) {
             mensaje("Ingrese todos los campos");
-            
-            
-        }else{
-        
-        for (int i = 0; i < au.getListaUsuarios().size(); i++) {
-            
-            if(tf_login_user.getText().equals(au.getListaUsuarios().get(i).getUsuario()) && tf_login_password.getText().equals(au.getListaUsuarios().get(i).getPassword())){
-                
-                login=true;
+
+        } else {
+            for (int i = 0; i < au.getListaUsuarios().size(); i++) {
+                if (tf_login_user.getText().equals(au.getListaUsuarios().get(i).getUsuario()) 
+                        && tf_login_password.getText().equals(au.getListaUsuarios().get(i).getPassword())) {
+                    login = true;
+                }
             }
-            
+            if (login) {
+                System.out.println("sdsdgdg");
+                
+                jd_login.dispose();
+                tf_login_user.setText("");
+                tf_login_password.setText("");
+            } else {
+                mensaje("Usuario incorrecto");
+            }
         }
-        if(login){
-            System.out.println("sdsdgdg");
-            System.out.println(au.getListaUsuarios().get(0).getNombre());
-            System.out.println(au.getListaUsuarios().get(1).getNombre());
-        }else{
-            mensaje("Usuario incorrecto");
-        }
-        } 
-//        
-//        for (Usuario u : au.getListaUsuarios()) {
-//            if(tf_login_user.getText().equals(u.getUsuario()) && tf_login_password.getText().equals(u.getPassword())){
-//                
-//                System.out.println("Welcome!!"+u.getNombre());
-//                
-//                break;
-//                
-//            }else{
-//                System.out.println("No existe");
-//            }
-//        }
-        
+
     }//GEN-LAST:event_jButton7MouseClicked
 
-    public void mensaje(String s){
-        JOptionPane.showMessageDialog(this,s);
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        if(jTabbedPane1.getSelectedIndex()==0){
+            flag=0;
+            
+        }
+        if(jTabbedPane1.getSelectedIndex()==1){
+            flag=1;
+        }
+        if(jTabbedPane1.getSelectedIndex()==2){
+            flag=2;
+        }
+        if(jTabbedPane1.getSelectedIndex()==3){
+            flag=3;
+        }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    public void mensaje(String s) {
+        JOptionPane.showMessageDialog(this, s);
     }
-    
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1180,6 +1273,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1198,10 +1293,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
@@ -1218,7 +1316,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rm_f;
     private javax.swing.JSpinner sp_cuenta_edad;
     private javax.swing.JSpinner sp_registro_edad;
+    private javax.swing.JTextArea ta_cuenta_descripcion;
     private javax.swing.JTextArea ta_cuenta_interes;
+    private javax.swing.JTextArea ta_registro_descripcion;
     private javax.swing.JTextArea ta_test;
     private javax.swing.JTextField tf_cuenta_nombre;
     private javax.swing.JTextField tf_cuenta_otroInteres;
@@ -1231,4 +1331,5 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_registro_user;
     // End of variables declaration//GEN-END:variables
     Usuario usuario_seleccionado;
+    int flag = 0;
 }
