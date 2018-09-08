@@ -21,17 +21,17 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
 
-        if(flag==0){
+        if (flag == 0) {
             adminUsuario au = new adminUsuario("./users.txt");
             au.cargarArchivoT();
-            DefaultListModel modelo = (DefaultListModel)jl_usuarioRegistrados.getModel();
-            
+            DefaultListModel modelo = (DefaultListModel) jl_usuarioRegistrados.getModel();
+
             for (int i = 0; i < au.getListaUsuarios().size(); i++) {
                 modelo.add(i, au.getListaUsuarios().get(i).getNombre());
             }
             jl_usuarioRegistrados.setModel(modelo);
         }
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -1004,8 +1004,9 @@ public class Main extends javax.swing.JFrame {
         }
 
         Usuario u = new Usuario(nombre, sexo, usuario, password, descripcion, foto, premium, edad);
-        Usuario uT= new Usuario(nombre, sexo, usuario, password, descripcion, premium, edad);
+        Usuario uT = new Usuario(nombre, sexo, usuario, password, descripcion, premium, edad);
 
+        ///
         if (chb_registro_correr.isSelected()) {
             interes = "Correr";
             u.agregarInteres(new Interes(interes));
@@ -1031,65 +1032,161 @@ public class Main extends javax.swing.JFrame {
             uT.agregarInteres(new Interes(interes));
             cI++;
         }
-        
+
         if (chb_registro_viajar.isSelected()) {
             interes = "Viajar";
             u.agregarInteres(new Interes(interes));
             uT.agregarInteres(new Interes(interes));
             cI++;
         }
-        
+
         if (chb_registro_nadar.isSelected()) {
             interes = "Nadar";
             u.agregarInteres(new Interes(interes));
             uT.agregarInteres(new Interes(interes));
             cI++;
         }
+        ///
+
+        ///
+        if (chb_registro_musica.isSelected()) {
+            interes = "Musica";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        if (chb_registro_anime.isSelected()) {
+            interes = "Anime";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        if (chb_registro_art.isSelected()) {
+            interes = "Art";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+
+        if (chb_registro_science.isSelected()) {
+            interes = "Science";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+
+        if (chb_registro_metal.isSelected()) {
+            interes = "Metal";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+
+        if (chb_registro_techno.isSelected()) {
+            interes = "Techno";
+            u.agregarInteres(new Interes(interes));
+            uT.agregarInteres(new Interes(interes));
+            cI++;
+        }
+        ///
 
         //u.agregarInteres(inter);
         adminUsuario au = new adminUsuario("./users.att");
         adminUsuario auT = new adminUsuario("./users.txt");
 
-        try {
+        if(au.buscar(usuario) == -1){
             
+        }else{
+            
+        }
+        
+        
 
-            if (cI >= 2) {
+        if (!tf_registro_nombre.getText().equals("")) {
 
-                if (au.buscar(usuario) == -1) {
+            if (!tf_registro_passwrd.getText().equals("")) {
 
-                    if (password.length() >= 3) {
+                if (!tf_registro_user.getText().equals("")) {
 
-                        auT.agregarUsuario(uT);
-                        auT.escribirTexto();
-                        
-                        au.agregarUsuario(u);
-                        DefaultComboBoxModel modeloCB = new DefaultComboBoxModel(au.getListaUsuarios().toArray());
-                        modeloCB.addElement(au);
-                        cb_cuenta_perfil.setModel(modeloCB);
-                        au.escribirArchivo();
+                    if (edad >= 18 && edad <= 99) {
+
+                        if (cI >= 10) {
+
+                            if (!descripcion.isEmpty()) {
+                                
+                                if (tf_registro_nombre.getText().matches("[a-zA-Z]+$")) {
+                                    
+                                    System.out.println("wohoooo");
+                                try {
+
+                                    if (au.buscar(usuario) == -1) {
+
+                                        if (password.length() >= 3) {
+
+                                            auT.agregarUsuario(uT);
+                                            auT.escribirTexto();
+
+                                            au.agregarUsuario(u);
+                                            DefaultComboBoxModel modeloCB = 
+                                                    new DefaultComboBoxModel(
+                                                            au.getListaUsuarios().
+                                                                    toArray());
+                                            modeloCB.addElement(au);
+                                            cb_cuenta_perfil.setModel(modeloCB);
+                                            au.escribirArchivo();
+                                            
+                                            
+                                            lb_registro_foto.setIcon(lb_registro_foto.getIcon());
+                                            tf_registro_nombre.setText("");
+                                            tf_registro_user.setText("");
+                                            tf_registro_passwrd.setText("");
+                                            sp_registro_edad.setValue(18);
+                                            ta_registro_descripcion.setText("");
+                                            
+                                            
+                                            
+                                        } else {
+                                            System.out.println("Password muy corto");
+                                        }
+
+                                    } else {
+                                        System.out.println("Ya existe el usuario");
+                                    }
+
+                                } catch (IOException ex) {
+
+                                }
+            
+                                }
+                                else{
+                                    System.out.println("Escriba un nombre correcto");
+                                }
+                                
+
+                            } else {
+                                System.out.println("Tiene que escribir una descripción");
+                            }
+
+                        } else {
+                            System.out.println("Tiene que ingresar 10 gustos.");
+                        }
+
                     } else {
-                        System.out.println("Password muy corto");
+                        System.out.println("Ingrese una edad correcta.");
                     }
 
                 } else {
-                    System.out.println("Ya existe el usuario");
+                    System.out.println("Ingrese un usuario");
                 }
 
             } else {
-
-                System.out.println("Ingrese más de 2 intereses");
-
+                System.out.println("Ingrese la contraseña");
             }
-
-        } catch (IOException ex) {
-
+        } else {
+            System.out.println("Ingrese un nombre");
         }
 
-        lb_registro_foto.setIcon(lb_registro_foto.getIcon());
-        tf_registro_nombre.setText("");
-        tf_registro_user.setText("");
-        tf_registro_passwrd.setText("");
-        sp_registro_edad.setValue(18);
+        
 
     }//GEN-LAST:event_bt_registro_signupMouseClicked
 
@@ -1138,14 +1235,14 @@ public class Main extends javax.swing.JFrame {
 
         } else {
             for (int i = 0; i < au.getListaUsuarios().size(); i++) {
-                if (tf_login_user.getText().equals(au.getListaUsuarios().get(i).getUsuario()) 
+                if (tf_login_user.getText().equals(au.getListaUsuarios().get(i).getUsuario())
                         && tf_login_password.getText().equals(au.getListaUsuarios().get(i).getPassword())) {
                     login = true;
                 }
             }
             if (login) {
                 System.out.println("sdsdgdg");
-                
+
                 jd_login.dispose();
                 tf_login_user.setText("");
                 tf_login_password.setText("");
@@ -1157,18 +1254,18 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        if(jTabbedPane1.getSelectedIndex()==0){
-            flag=0;
-            
+        if (jTabbedPane1.getSelectedIndex() == 0) {
+            flag = 0;
+
         }
-        if(jTabbedPane1.getSelectedIndex()==1){
-            flag=1;
+        if (jTabbedPane1.getSelectedIndex() == 1) {
+            flag = 1;
         }
-        if(jTabbedPane1.getSelectedIndex()==2){
-            flag=2;
+        if (jTabbedPane1.getSelectedIndex() == 2) {
+            flag = 2;
         }
-        if(jTabbedPane1.getSelectedIndex()==3){
-            flag=3;
+        if (jTabbedPane1.getSelectedIndex() == 3) {
+            flag = 3;
         }
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
