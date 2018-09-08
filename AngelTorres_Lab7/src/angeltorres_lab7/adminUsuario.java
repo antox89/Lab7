@@ -140,6 +140,40 @@ public class adminUsuario {
         fw.close();
 
     }
+    
+    public void escribirTextoM() throws IOException {
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+
+        try {
+            fw = new FileWriter(archivo, false);
+            bw = new BufferedWriter(fw);
+
+            for (Usuario u : listaUsuarios) {
+                bw.write(u.getNombre() + ";");
+                bw.write(u.getUsuario() + ";");
+                bw.write(u.getPassword() + ";");
+                bw.write(u.getEdad() + ";");
+
+                for (Interes in : u.getListaIntereses()) {
+                    bw.write(in.getInteres() + ",");
+                }
+                bw.write(";");
+                bw.write(u.getDescripcion() + ";");
+                bw.write(u.getPremium() + ";");
+                bw.write(u.getSexo() + ";");
+
+            }
+            bw.flush();
+        } catch (IOException e) {
+
+        }
+        bw.close();
+        fw.close();
+
+    }
+    
+    
 
     public void cargarArchivoT() {
         Scanner sc = null;

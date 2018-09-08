@@ -193,8 +193,7 @@ public class Usuario implements Serializable{
     public void setPremium(String premium) {
         this.premium = premium;
     }
-    
-    
+
     
     
     

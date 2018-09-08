@@ -41,7 +41,7 @@ public class Main extends javax.swing.JFrame {
         }
 
         
-        
+        tpane1.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -107,7 +107,7 @@ public class Main extends javax.swing.JFrame {
         bt_registro_deselect = new javax.swing.JButton();
         btg_sexo_registro = new javax.swing.ButtonGroup();
         btg_sexo_cuenta = new javax.swing.ButtonGroup();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tpane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_usuarioRegistrados = new javax.swing.JList<>();
@@ -156,11 +156,11 @@ public class Main extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jmi_login = new javax.swing.JMenuItem();
+        jmi_registro = new javax.swing.JMenuItem();
+        jmi_logout = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmi_exit = new javax.swing.JMenuItem();
 
         jLabel2.setText("Para:");
 
@@ -228,6 +228,9 @@ public class Main extends javax.swing.JFrame {
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton7MouseEntered(evt);
             }
         });
 
@@ -557,9 +560,9 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tander");
 
-        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+        tpane1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jTabbedPane1StateChanged(evt);
+                tpane1StateChanged(evt);
             }
         });
 
@@ -661,7 +664,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Perfil", jPanel1);
+        tpane1.addTab("Perfil", jPanel1);
 
         lb_cuenta_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp.jpg"))); // NOI18N
 
@@ -754,6 +757,11 @@ public class Main extends javax.swing.JFrame {
 
         bt_cuenta_save.setText("Guardar");
         bt_cuenta_save.setEnabled(false);
+        bt_cuenta_save.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_cuenta_saveMouseClicked(evt);
+            }
+        });
 
         bt_cuenta_selectFoto.setText("Seleccionar...");
         bt_cuenta_selectFoto.setEnabled(false);
@@ -891,7 +899,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Cuenta", jPanel2);
+        tpane1.addTab("Cuenta", jPanel2);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -904,7 +912,7 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 625, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab3", jPanel4);
+        tpane1.addTab("tab3", jPanel4);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -917,32 +925,34 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 625, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab4", jPanel5);
+        tpane1.addTab("tab4", jPanel5);
 
         jMenu1.setText("Tander");
 
-        jMenuItem1.setText("Log In");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jmi_login.setText("Log In");
+        jmi_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jmi_loginActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(jmi_login);
 
-        jMenuItem4.setText("Registro");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jmi_registro.setText("Registro");
+        jmi_registro.setEnabled(false);
+        jmi_registro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jmi_registroActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(jmi_registro);
 
-        jMenuItem2.setText("Log Out");
-        jMenu1.add(jMenuItem2);
+        jmi_logout.setText("Log Out");
+        jmi_logout.setEnabled(false);
+        jMenu1.add(jmi_logout);
         jMenu1.add(jSeparator1);
 
-        jMenuItem3.setText("Exit");
-        jMenu1.add(jMenuItem3);
+        jmi_exit.setText("Exit");
+        jMenu1.add(jmi_exit);
 
         jMenuBar1.add(jMenu1);
 
@@ -952,11 +962,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tpane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tpane1)
         );
 
         pack();
@@ -977,7 +987,7 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bt_registrar_selectFotoMouseClicked
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void jmi_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_registroActionPerformed
         
         if(rb_cuenta_m.isSelected()){
             lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp.jpg")));
@@ -989,7 +999,7 @@ public class Main extends javax.swing.JFrame {
         jd_registro.setModal(true);
         jd_registro.setLocationRelativeTo(this);
         jd_registro.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_jmi_registroActionPerformed
 
     private void bt_registro_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_signupMouseClicked
 
@@ -1305,14 +1315,17 @@ public class Main extends javax.swing.JFrame {
         chb_registro_viajar.setSelected(false);
     }
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jmi_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_loginActionPerformed
         jd_login.pack();
         jd_login.setModal(true);
         jd_login.setLocationRelativeTo(this);
         jd_login.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jmi_loginActionPerformed
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+       
+        
+        
         adminUsuario au = new adminUsuario("./users.txt");
         //adminUsuario au = new adminUsuario("./users.att");
         au.cargarArchivoT();
@@ -1339,6 +1352,11 @@ public class Main extends javax.swing.JFrame {
                 logged = au.getListaUsuarios().get(posU).getNombre();
                 //logged = au.getListaUsuarios().get(posUser);
 
+                tpane1.setVisible(true);
+                jmi_login.setEnabled(false);
+                jmi_logout.setEnabled(true);
+                jmi_registro.setEnabled(true);
+                
                 jd_login.dispose();
                 tf_login_user.setText("");
                 tf_login_password.setText("");
@@ -1349,12 +1367,12 @@ public class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton7MouseClicked
 
-    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        if (jTabbedPane1.getSelectedIndex() == 0) {
+    private void tpane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tpane1StateChanged
+        if (tpane1.getSelectedIndex() == 0) {
             flag = 0;
 
         }
-        if (jTabbedPane1.getSelectedIndex() == 1) {
+        if (tpane1.getSelectedIndex() == 1) {
             flag = 1;
 
             adminUsuario ap = new adminUsuario(("./bin.att"));
@@ -1365,13 +1383,13 @@ public class Main extends javax.swing.JFrame {
             //bt_cuenta_edit.setVisible(false);
 
         }
-        if (jTabbedPane1.getSelectedIndex() == 2) {
+        if (tpane1.getSelectedIndex() == 2) {
             flag = 2;
         }
-        if (jTabbedPane1.getSelectedIndex() == 3) {
+        if (tpane1.getSelectedIndex() == 3) {
             flag = 3;
         }
-    }//GEN-LAST:event_jTabbedPane1StateChanged
+    }//GEN-LAST:event_tpane1StateChanged
 
     private void bt_registro_selectAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_selectAllMouseClicked
 
@@ -1389,6 +1407,8 @@ public class Main extends javax.swing.JFrame {
         if (flag == 1) {
             if (evt.getStateChange() == 2) {
                 ta_cuenta_interes.setText("");
+                cancelEditCuenta();
+                bt_cuenta_edit.setEnabled(true);
                 
                 Usuario temp = (Usuario) cb_cuenta_perfil.getSelectedItem();
                 if (temp != null) {
@@ -1459,7 +1479,153 @@ public class Main extends javax.swing.JFrame {
 
     private void bt_cuenta_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cuenta_editMouseClicked
         //Modificar cuenta desde bt
-        bt_cuenta_save.setEnabled(false);
+        modificarCuenta();
+        
+        
+        
+        
+    }//GEN-LAST:event_bt_cuenta_editMouseClicked
+
+    private void bt_cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cancelMouseClicked
+        cancelEditCuenta();
+    }//GEN-LAST:event_bt_cancelMouseClicked
+
+    private void bt_cuenta_saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cuenta_saveMouseClicked
+        // Guardar cambios en archivos
+        int cI = 0, edad;
+        String nombre, usuario, password, sexo, premium, descripcion;
+        Icon foto;
+
+        String interes;
+
+        foto = lb_cuenta_foto.getIcon();
+
+        nombre = tf_cuenta_nombre.getText();
+        usuario = tf_cuenta_user.getText();
+        password = tf_cuenta_password.getText();
+        edad = Integer.parseInt(sp_cuenta_edad.getValue().toString());
+        descripcion = ta_cuenta_descripcion.getText();
+
+        if (rb_cuenta_m.isSelected()) {
+            sexo = "M";
+        } else {
+            sexo = "F";
+        }
+
+        if (checkbox_cuenta_premium.isSelected()) {
+            premium = "Premium";
+        } else {
+            premium = "Regular";
+        }
+
+        Usuario u = new Usuario(nombre, sexo, usuario, password, descripcion, foto, premium, edad);
+        Usuario uT = new Usuario(nombre, sexo, usuario, password, descripcion, premium, edad);
+        
+        adminUsuario au = new adminUsuario("./bin.att");
+        adminUsuario auT = new adminUsuario("./users.txt");
+        
+        au.cargarArchivo();
+        au.cargarArchivoT();
+        
+        au.getListaUsuarios().get(posUser).setNombre(nombre);
+        au.getListaUsuarios().get(posUser).setUsuario(usuario);
+        au.getListaUsuarios().get(posUser).setPassword(password);
+        au.getListaUsuarios().get(posUser).setEdad(edad);
+        au.getListaUsuarios().get(posUser).setFoto(foto);
+        au.getListaUsuarios().get(posUser).setDescripcion(descripcion);
+        au.getListaUsuarios().get(posUser).setPremium(premium);
+        
+        
+        au.agregarUsuario(u);   
+        auT.agregarUsuario(uT);
+        
+        
+
+        
+//        if ((auT.buscar(usuario) == 0)) {
+//            mensaje(this, "Ya existe ese usuario!");
+//            
+//        } else {
+//            mensaje(this, "");
+//        }
+        if (!tf_cuenta_nombre.getText().equals("")) {
+            if (!tf_cuenta_password.getText().equals("")) {
+                if (!tf_cuenta_user.getText().equals("")) {
+                    if (edad >= 18 && edad <= 99) {
+                        //if (cI >= 10) {
+                            if (!descripcion.isEmpty()) {
+                                if (tf_cuenta_nombre.getText().matches("[a-zA-Z]+$")) {
+
+                                    //if (auT.buscar(usuario) == 0) {
+                                    if (password.length() >= 8) {
+
+                                        try {
+
+                                            auT.escribirTextoM();
+                                            au.escribirArchivo();
+                                            
+                                            //auT = new adminUsuario("./users.txt");
+                                            au = new adminUsuario("./bin.att");
+                                            
+                                            //auT.cargarArchivoT();
+                                            au.cargarArchivo();
+                                            
+                                            
+                                            DefaultComboBoxModel model = new DefaultComboBoxModel(au.getListaUsuarios().toArray());
+                                            cb_cuenta_perfil.setModel(model);
+                                            
+                                          
+                                            mensaje(this, "Usuario Modificado con éxito");
+
+                                            cancelEditCuenta();
+
+                                        } catch (IOException ex) {
+
+                                        }
+
+                                    } else {
+                                        mensaje(this, "Password muy corto");
+                                    }
+
+                                    //} else {
+                                    //    System.out.println("Ya existe ese usuario");
+                                    //}
+                                } else {
+                                    mensaje(this, "Escriba un nombre correcto");
+                                }
+
+                            } else {
+                                mensaje(this, "Tiene que escribir una descripción");
+                            }
+
+//                        } else {
+//                            mensaje(this, "Tiene que ingresar 10 gustos.");
+//                        }
+
+                    } else {
+                        mensaje(this, "Ingrese una edad correcta.");
+                    }
+
+                } else {
+                    mensaje(this, "Ingrese un usuario");
+                }
+
+            } else {
+                mensaje(this, "Ingrese la contraseña");
+            }
+        } else {
+            mensaje(this, "Ingrese nombre");
+        }
+    }//GEN-LAST:event_bt_cuenta_saveMouseClicked
+
+    private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7MouseEntered
+
+    public void modificarCuenta(){
+        //Modificar cuenta
+        bt_cuenta_edit.setEnabled(false);
+        bt_cuenta_save.setEnabled(true);
         bt_cancel.setEnabled(true);
         bt_cuenta_addInteres.setEnabled(true);
         bt_cuenta_selectFoto.setEnabled(true);
@@ -1477,13 +1643,8 @@ public class Main extends javax.swing.JFrame {
         sp_cuenta_edad.setEnabled(true);
         ta_cuenta_descripcion.setEnabled(true);
         checkbox_cuenta_premium.setEnabled(true);
-        
-    }//GEN-LAST:event_bt_cuenta_editMouseClicked
-
-    private void bt_cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cancelMouseClicked
-        cancelEditCuenta();
-    }//GEN-LAST:event_bt_cancelMouseClicked
-
+    }
+    
     public void cancelEditCuenta(){
         //Cancelar cambios cuenta desde bt
         
@@ -1609,10 +1770,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1627,13 +1784,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JDialog jd_login;
     private javax.swing.JDialog jd_mensaje;
     private javax.swing.JDialog jd_registro;
     private javax.swing.JList<String> jl_usuarioRegistrados;
+    private javax.swing.JMenuItem jmi_exit;
+    private javax.swing.JMenuItem jmi_login;
+    private javax.swing.JMenuItem jmi_logout;
+    private javax.swing.JMenuItem jmi_registro;
     private javax.swing.JList<String> jt_amigos;
     private javax.swing.JLabel lb_cuenta_foto;
     private javax.swing.JLabel lb_registro_foto;
@@ -1659,6 +1819,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPasswordField tf_registro_passwrd;
     private javax.swing.JTextField tf_registro_user;
     private javax.swing.JTextField tf_tst;
+    private javax.swing.JTabbedPane tpane1;
     // End of variables declaration//GEN-END:variables
     Usuario usuario_seleccionado;
     String logged;
