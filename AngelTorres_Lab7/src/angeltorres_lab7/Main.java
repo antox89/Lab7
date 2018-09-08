@@ -113,6 +113,10 @@ public class Main extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         ta_test = new javax.swing.JTextArea();
+        tb_test = new javax.swing.JButton();
+        tf_tst = new javax.swing.JTextField();
+        lb_test = new javax.swing.JLabel();
+        cb_test = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         lb_cuenta_foto = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -586,6 +590,17 @@ public class Main extends javax.swing.JFrame {
         ta_test.setRows(5);
         jScrollPane3.setViewportView(ta_test);
 
+        tb_test.setText("jButton3");
+        tb_test.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_testMouseClicked(evt);
+            }
+        });
+
+        lb_test.setText("jLabel23");
+
+        cb_test.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -600,7 +615,17 @@ public class Main extends javax.swing.JFrame {
                         .addGap(94, 94, 94))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(166, 166, 166))))
+                        .addGap(166, 166, 166))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_test)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tb_test)
+                                .addGap(48, 48, 48)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cb_test, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_tst, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(jLabel1)
@@ -608,18 +633,27 @@ public class Main extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tb_test)
+                            .addComponent(tf_tst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
+                        .addComponent(cb_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(lb_test))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Perfil", jPanel1);
@@ -1174,14 +1208,15 @@ public class Main extends javax.swing.JFrame {
         }
         ///
 
-        //u.agregarInteres(inter);
-        //adminUsuario au = new adminUsuario("./users.att");
+        
+        adminUsuario au = new adminUsuario("./bin.att");
         adminUsuario auT = new adminUsuario("./users.txt");
-        //auT.cargarArchivoT();
-
+        
+        au.cargarArchivo();
+        au.agregarUsuario(u);   
         auT.agregarUsuario(uT);
-
-        //au.cargarArchivo();
+        
+        
 
         /*
         if (!(auT.buscar(usuario) == 0)) {
@@ -1204,15 +1239,15 @@ public class Main extends javax.swing.JFrame {
                                         try {
 
                                             auT.escribirTexto();
-
+                                            au.escribirArchivo();
                                             //au.agregarUsuario(u);
-                                            //au.escribirArchivo();
-                                            DefaultComboBoxModel modeloCB
-                                                    = new DefaultComboBoxModel(
-                                                            auT.getListaUsuarios().
-                                                                    toArray());
+                                            //
+//                                            DefaultComboBoxModel modeloCB
+//                                                    = new DefaultComboBoxModel(
+//                                                            auT.getListaUsuarios().
+//                                                                    toArray());
                                             //modeloCB.addElement(au.getListaUsuarios().toArray());
-                                            cb_cuenta_perfil.setModel(modeloCB);
+//                                            cb_cuenta_perfil.setModel(modeloCB);
 
                                             mensaje(jd_registro, "Usuario Registrado con éxito");
 
@@ -1395,11 +1430,12 @@ public class Main extends javax.swing.JFrame {
         if (jTabbedPane1.getSelectedIndex() == 1) {
             flag = 1;
 
-            adminUsuario ap = new adminUsuario(("./users.txt"));
-            ap.cargarArchivoT();
+            adminUsuario ap = new adminUsuario(("./bin.att"));
+            //ap.cargarArchivoT();
+            ap.cargarArchivo();
             DefaultComboBoxModel modelo = new DefaultComboBoxModel(ap.getListaUsuarios().toArray());
             cb_cuenta_perfil.setModel(modelo);
-            bt_cuenta_edit.setVisible(false);
+            //bt_cuenta_edit.setVisible(false);
 
         }
         if (jTabbedPane1.getSelectedIndex() == 2) {
@@ -1426,10 +1462,9 @@ public class Main extends javax.swing.JFrame {
                 Usuario temp = (Usuario) cb_cuenta_perfil.getSelectedItem();
                 if (temp != null) {
                     tf_cuenta_nombre.setText(temp.getNombre());
-                    //sp_cuenta_edad.setValue(Integer.toString(temp.getEdad()));
                     tf_cuenta_user.setText(temp.getUsuario());
 
-                    lb_cuenta_foto.setIcon(temp.getFoto());
+                    //lb_cuenta_foto.setIcon(temp.getFoto());
 
                     tf_cuenta_password.setText(temp.getPassword());
                     sp_cuenta_edad.setValue(temp.getEdad());
@@ -1441,17 +1476,49 @@ public class Main extends javax.swing.JFrame {
                         checkbox_cuenta_premium.setSelected(false);
                     }
                     
-                    
-                    
-                    
-
-                    adminUsuario ap = new adminUsuario(("./users.txt"));
-                    ap.cargarArchivoT();
-                    for (Usuario user : ap.getListaUsuarios()) {
-                        if (tf_login_user.getText().equals(user.getUsuario())) {
-                            bt_cuenta_edit.setVisible(true);
+                    int ct=0;
+                    for (Interes t : temp.getListaIntereses()) {
+                        
+                        if(t.getInteres().equals("Anime")){
+                            chb_registro_anime1.setSelected(true);
+                        }else{
+                            chb_registro_anime1.setSelected(false);
                         }
+                        if(t.getInteres().equals("Art")){
+                            chb_registro_anime1.setSelected(true);
+                        }else{
+                            chb_registro_anime1.setSelected(false);
+                        }
+                        ct++;
                     }
+                    
+                    
+//                    for (int i = 0; i < temp.getListaIntereses().size(); i++) {
+//                        
+//                        if(temp.getListaIntereses().get(i).equals("Anime")){
+//                            chb_registro_anime1.setSelected(true);
+//                            System.out.println(true);
+//                        }else{
+//                            chb_registro_anime1.setSelected(false);
+//                        }
+//                        if(temp.getListaIntereses().get(i).equals("Art")){
+//                            chb_registro_art1.setSelected(true);
+//                        }else{
+//                            chb_registro_art1.setSelected(false);
+//                        }
+//                        
+//                    }
+                    
+                    
+                    //adminUsuario ap = new adminUsuario(("./bin.att"));
+
+                    //adminUsuario ap = new adminUsuario(("./users.txt"));
+                    //ap.cargarArchivo();
+                    //for (Usuario user : ap.getListaUsuarios()) {
+                    //    if (tf_login_user.getText().equals(user.getUsuario())) {
+                    //        bt_cuenta_edit.setVisible(true);
+                    //    }
+                    //}
 
                 }
 
@@ -1459,6 +1526,17 @@ public class Main extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_cb_cuenta_perfilItemStateChanged
+
+    private void tb_testMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_testMouseClicked
+        adminUsuario ap = new adminUsuario("./bin.att");
+        ap.cargarArchivo();
+        
+        DefaultComboBoxModel list = new DefaultComboBoxModel(ap.getListaUsuarios().toArray());
+        cb_test.setModel(list);
+        
+        //lb_test.setIcon(ap.getListaUsuarios().get(1).getFoto());
+        tf_tst.setText(ap.getListaUsuarios().get(1).getListaIntereses().get(3).getInteres());
+    }//GEN-LAST:event_tb_testMouseClicked
 
     public void mensaje(String s) {
         JOptionPane.showMessageDialog(this, s);
@@ -1509,6 +1587,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btg_sexo_cuenta;
     private javax.swing.ButtonGroup btg_sexo_registro;
     private javax.swing.JComboBox<String> cb_cuenta_perfil;
+    private javax.swing.JComboBox<String> cb_test;
     private javax.swing.JCheckBox chb_registro_anime;
     private javax.swing.JCheckBox chb_registro_anime1;
     private javax.swing.JCheckBox chb_registro_art;
@@ -1604,6 +1683,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JList<String> jl_usuarioRegistrados;
     private javax.swing.JLabel lb_cuenta_foto;
     private javax.swing.JLabel lb_registro_foto;
+    private javax.swing.JLabel lb_test;
     private javax.swing.JRadioButton rb_cuenta_f;
     private javax.swing.JRadioButton rb_cuenta_m;
     private javax.swing.JRadioButton rb_m;
@@ -1614,6 +1694,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextArea ta_cuenta_interes;
     private javax.swing.JTextArea ta_registro_descripcion;
     private javax.swing.JTextArea ta_test;
+    private javax.swing.JButton tb_test;
     private javax.swing.JTextField tf_cuenta_nombre;
     private javax.swing.JTextField tf_cuenta_otroInteres;
     private javax.swing.JPasswordField tf_cuenta_password;
@@ -1623,7 +1704,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_registro_nombre;
     private javax.swing.JPasswordField tf_registro_passwrd;
     private javax.swing.JTextField tf_registro_user;
+    private javax.swing.JTextField tf_tst;
     // End of variables declaration//GEN-END:variables
     Usuario usuario_seleccionado;
+    Interes interes_seleccionado;
     int flag = 0;
 }

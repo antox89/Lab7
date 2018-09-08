@@ -90,7 +90,7 @@ public class adminUsuario {
         ObjectOutputStream bw = null;
 
         try {
-            fw = new FileOutputStream(archivo, true);
+            fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
             for (Usuario e : listaUsuarios) {
                 bw.writeObject(e);
