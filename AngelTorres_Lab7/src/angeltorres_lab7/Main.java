@@ -948,6 +948,11 @@ public class Main extends javax.swing.JFrame {
 
         jmi_logout.setText("Log Out");
         jmi_logout.setEnabled(false);
+        jmi_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_logoutActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmi_logout);
         jMenu1.add(jSeparator1);
 
@@ -1621,6 +1626,13 @@ public class Main extends javax.swing.JFrame {
     private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7MouseEntered
+
+    private void jmi_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_logoutActionPerformed
+        tpane1.setVisible(false);
+                jmi_login.setEnabled(true);
+                jmi_logout.setEnabled(false);
+                jmi_registro.setEnabled(false);
+    }//GEN-LAST:event_jmi_logoutActionPerformed
 
     public void modificarCuenta(){
         //Modificar cuenta
