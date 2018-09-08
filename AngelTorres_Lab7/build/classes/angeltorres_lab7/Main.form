@@ -249,7 +249,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="60" max="32767" attributes="0"/>
+                  <EmptySpace pref="95" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -344,7 +344,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_m">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroup1"/>
+              <ComponentRef name="btg_sexo_registro"/>
             </Property>
             <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="M"/>
@@ -353,7 +353,7 @@
         <Component class="javax.swing.JRadioButton" name="rm_f">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroup1"/>
+              <ComponentRef name="btg_sexo_registro"/>
             </Property>
             <Property name="text" type="java.lang.String" value="F"/>
           </Properties>
@@ -430,40 +430,50 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace pref="43" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="chb_registro_correr" min="-2" max="-2" attributes="0"/>
-                          <Component id="chb_registro_bailar" min="-2" max="-2" attributes="0"/>
-                          <Component id="chb_registro_cantar" min="-2" max="-2" attributes="0"/>
-                          <Component id="chb_registro_comer" min="-2" max="-2" attributes="0"/>
-                          <Component id="chb_registro_viajar" min="-2" max="-2" attributes="0"/>
-                          <Component id="chb_registro_nadar" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="chb_registro_anime" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_art" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_science" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_metal" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_techno" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_musica" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_correr" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_bailar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_cantar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_comer" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_viajar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chb_registro_nadar" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="chb_registro_sports" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_biz" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_saltar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_movies" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_tvshows" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chb_registro_news" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="chb_registro_anime" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_art" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_science" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_metal" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_techno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_musica" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="chb_registro_sports" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_biz" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_saltar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_movies" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_tvshows" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chb_registro_news" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="bt_registro_deselect" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="bt_registro_selectAll" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -514,7 +524,12 @@
                               <Component id="chb_registro_saltar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bt_registro_selectAll" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bt_registro_deselect" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -615,13 +630,29 @@
                 <Property name="text" type="java.lang.String" value="Intereses:"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="bt_registro_selectAll">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Todos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_registro_selectAllMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bt_registro_deselect">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ninguno"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_registro_deselectMouseClicked"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    <Component class="javax.swing.ButtonGroup" name="btg_sexo_registro">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    <Component class="javax.swing.ButtonGroup" name="btg_sexo_cuenta">
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
@@ -998,11 +1029,17 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="rb_cuenta_m">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="btg_sexo_cuenta"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="M"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rb_cuenta_f">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="btg_sexo_cuenta"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="F"/>
               </Properties>
             </Component>
@@ -1294,6 +1331,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cb_cuenta_perfilItemStateChanged"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>

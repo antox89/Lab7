@@ -1,5 +1,6 @@
 package angeltorres_lab7;
 
+import java.awt.Component;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
@@ -100,8 +101,10 @@ public class Main extends javax.swing.JFrame {
         chb_registro_tvshows = new javax.swing.JCheckBox();
         chb_registro_movies = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        bt_registro_selectAll = new javax.swing.JButton();
+        bt_registro_deselect = new javax.swing.JButton();
+        btg_sexo_registro = new javax.swing.ButtonGroup();
+        btg_sexo_cuenta = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -279,11 +282,11 @@ public class Main extends javax.swing.JFrame {
 
         jLabel8.setText("Edad:");
 
-        buttonGroup1.add(rb_m);
+        btg_sexo_registro.add(rb_m);
         rb_m.setSelected(true);
         rb_m.setText("M");
 
-        buttonGroup1.add(rm_f);
+        btg_sexo_registro.add(rm_f);
         rm_f.setText("F");
 
         sp_registro_edad.setModel(new javax.swing.SpinnerNumberModel(18, 18, 99, 1));
@@ -354,39 +357,60 @@ public class Main extends javax.swing.JFrame {
 
         jLabel11.setText("Intereses:");
 
+        bt_registro_selectAll.setText("Todos");
+        bt_registro_selectAll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_registro_selectAllMouseClicked(evt);
+            }
+        });
+
+        bt_registro_deselect.setText("Ninguno");
+        bt_registro_deselect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_registro_deselectMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chb_registro_correr)
-                    .addComponent(chb_registro_bailar)
-                    .addComponent(chb_registro_cantar)
-                    .addComponent(chb_registro_comer)
-                    .addComponent(chb_registro_viajar)
-                    .addComponent(chb_registro_nadar))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chb_registro_anime)
-                            .addComponent(chb_registro_art)
-                            .addComponent(chb_registro_science)
-                            .addComponent(chb_registro_metal)
-                            .addComponent(chb_registro_techno)
-                            .addComponent(chb_registro_musica))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(chb_registro_correr)
+                            .addComponent(chb_registro_bailar)
+                            .addComponent(chb_registro_cantar)
+                            .addComponent(chb_registro_comer)
+                            .addComponent(chb_registro_viajar)
+                            .addComponent(chb_registro_nadar))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chb_registro_sports)
-                            .addComponent(chb_registro_biz)
-                            .addComponent(chb_registro_saltar)
-                            .addComponent(chb_registro_movies)
-                            .addComponent(chb_registro_tvshows)
-                            .addComponent(chb_registro_news))))
-                .addGap(25, 25, 25))
+                            .addComponent(jLabel11)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chb_registro_anime)
+                                    .addComponent(chb_registro_art)
+                                    .addComponent(chb_registro_science)
+                                    .addComponent(chb_registro_metal)
+                                    .addComponent(chb_registro_techno)
+                                    .addComponent(chb_registro_musica))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chb_registro_sports)
+                                    .addComponent(chb_registro_biz)
+                                    .addComponent(chb_registro_saltar)
+                                    .addComponent(chb_registro_movies)
+                                    .addComponent(chb_registro_tvshows)
+                                    .addComponent(chb_registro_news))))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(bt_registro_deselect)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_registro_selectAll)
+                        .addGap(36, 36, 36))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,7 +455,11 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(chb_registro_biz)
                         .addGap(18, 18, 18)
                         .addComponent(chb_registro_saltar)))
-                .addGap(42, 42, 42))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_registro_selectAll)
+                    .addComponent(bt_registro_deselect))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jd_registroLayout = new javax.swing.GroupLayout(jd_registro.getContentPane());
@@ -482,7 +510,7 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(jd_registroLayout.createSequentialGroup()
                                 .addGap(101, 101, 101)
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_registroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bt_registro_signup)
@@ -606,8 +634,10 @@ public class Main extends javax.swing.JFrame {
 
         jLabel15.setText("Sexo:");
 
+        btg_sexo_cuenta.add(rb_cuenta_m);
         rb_cuenta_m.setText("M");
 
+        btg_sexo_cuenta.add(rb_cuenta_f);
         rb_cuenta_f.setText("F");
 
         jLabel16.setText("Edad:");
@@ -771,6 +801,11 @@ public class Main extends javax.swing.JFrame {
         jButton6.setText("Agregar Interés");
 
         cb_cuenta_perfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mi Perfil" }));
+        cb_cuenta_perfil.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_cuenta_perfilItemStateChanged(evt);
+            }
+        });
 
         ta_cuenta_descripcion.setColumns(20);
         ta_cuenta_descripcion.setRows(5);
@@ -1150,10 +1185,11 @@ public class Main extends javax.swing.JFrame {
         //au.cargarArchivo();
 
         /*
-        if (auT.buscar(usuario) == 0) {
+        if (!(auT.buscar(usuario) == 0)) {
             System.out.println("Aquí está");
-        } else {
             System.out.println("No está");
+        } else {
+            
         }*/
         
         if (!tf_registro_nombre.getText().equals("")) {
@@ -1180,7 +1216,7 @@ public class Main extends javax.swing.JFrame {
                                             //modeloCB.addElement(au.getListaUsuarios().toArray());
                                             cb_cuenta_perfil.setModel(modeloCB);
 
-                                            mensaje("Usuario Registrado con éxito");
+                                            mensaje(jd_registro,"Usuario Registrado con éxito");
 
                                             limpiarRegistro();
 
@@ -1189,37 +1225,37 @@ public class Main extends javax.swing.JFrame {
                                         }
 
                                     } else {
-                                        mensaje("Password muy corto");
+                                        mensaje(jd_registro,"Password muy corto");
                                     }
 
                                     //} else {
                                     //    System.out.println("Ya existe ese usuario");
                                     //}
                                 } else {
-                                    mensaje("Escriba un nombre correcto");
+                                    mensaje(jd_registro,"Escriba un nombre correcto");
                                 }
 
                             } else {
-                                mensaje("Tiene que escribir una descripción");
+                                mensaje(jd_registro,"Tiene que escribir una descripción");
                             }
 
                         } else {
-                            mensaje("Tiene que ingresar 10 gustos.");
+                            mensaje(jd_registro,"Tiene que ingresar 10 gustos.");
                         }
 
                     } else {
-                        mensaje("Ingrese una edad correcta.");
+                        mensaje(jd_registro,"Ingrese una edad correcta.");
                     }
 
                 } else {
-                    mensaje("Ingrese un usuario");
+                    mensaje(jd_registro,"Ingrese un usuario");
                 }
 
             } else {
-                mensaje("Ingrese la contraseña");
+                mensaje(jd_registro,"Ingrese la contraseña");
             }
         } else {
-            mensaje("Ingrese nombre");
+            mensaje(jd_registro,"Ingrese nombre");
         }
 
 
@@ -1234,6 +1270,65 @@ public class Main extends javax.swing.JFrame {
         ta_registro_descripcion.setText("");
 
         chb_registro_anime.setSelected(false);
+        chb_registro_art.setSelected(false);
+        chb_registro_bailar.setSelected(false);
+        chb_registro_biz.setSelected(false);
+        chb_registro_cantar.setSelected(false);
+        chb_registro_comer.setSelected(false);
+        chb_registro_correr.setSelected(false);
+        chb_registro_metal.setSelected(false);
+        chb_registro_movies.setSelected(false);
+        chb_registro_musica.setSelected(false);
+        chb_registro_nadar.setSelected(false);
+        chb_registro_saltar.setSelected(false);
+        chb_registro_tvshows.setSelected(false);
+        chb_registro_news.setSelected(false);
+        chb_registro_science.setSelected(false);
+        chb_registro_sports.setSelected(false);
+        chb_registro_techno.setSelected(false);
+        chb_registro_viajar.setSelected(false);
+    }
+    
+    public void selectAll(){
+        chb_registro_anime.setSelected(true);
+        chb_registro_art.setSelected(true);
+        chb_registro_bailar.setSelected(true);
+        chb_registro_biz.setSelected(true);
+        chb_registro_cantar.setSelected(true);
+        chb_registro_comer.setSelected(true);
+        chb_registro_correr.setSelected(true);
+        chb_registro_metal.setSelected(true);
+        chb_registro_movies.setSelected(true);
+        chb_registro_musica.setSelected(true);
+        chb_registro_nadar.setSelected(true);
+        chb_registro_saltar.setSelected(true);
+        chb_registro_tvshows.setSelected(true);
+        chb_registro_news.setSelected(true);
+        chb_registro_science.setSelected(true);
+        chb_registro_sports.setSelected(true);
+        chb_registro_techno.setSelected(true);
+        chb_registro_viajar.setSelected(true);
+    }
+    
+    public void deselectAll(){
+        chb_registro_anime.setSelected(false);
+        chb_registro_art.setSelected(false);
+        chb_registro_bailar.setSelected(false);
+        chb_registro_biz.setSelected(false);
+        chb_registro_cantar.setSelected(false);
+        chb_registro_comer.setSelected(false);
+        chb_registro_correr.setSelected(false);
+        chb_registro_metal.setSelected(false);
+        chb_registro_movies.setSelected(false);
+        chb_registro_musica.setSelected(false);
+        chb_registro_nadar.setSelected(false);
+        chb_registro_saltar.setSelected(false);
+        chb_registro_tvshows.setSelected(false);
+        chb_registro_news.setSelected(false);
+        chb_registro_science.setSelected(false);
+        chb_registro_sports.setSelected(false);
+        chb_registro_techno.setSelected(false);
+        chb_registro_viajar.setSelected(false);
     }
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -1296,9 +1391,16 @@ public class Main extends javax.swing.JFrame {
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         if (jTabbedPane1.getSelectedIndex() == 0) {
             flag = 0;
+            
+        
         }
         if (jTabbedPane1.getSelectedIndex() == 1) {
             flag = 1;
+            
+            adminUsuario ap=new adminUsuario(("./users.txt"));
+            ap.cargarArchivoT();
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel(ap.getListaUsuarios().toArray());
+            cb_cuenta_perfil.setModel(modelo);
         }
         if (jTabbedPane1.getSelectedIndex() == 2) {
             flag = 2;
@@ -1308,8 +1410,37 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
+    private void bt_registro_selectAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_selectAllMouseClicked
+        
+        selectAll();
+    }//GEN-LAST:event_bt_registro_selectAllMouseClicked
+
+    private void bt_registro_deselectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registro_deselectMouseClicked
+        deselectAll();
+    }//GEN-LAST:event_bt_registro_deselectMouseClicked
+
+    private void cb_cuenta_perfilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_cuenta_perfilItemStateChanged
+        
+        if(flag == 1){
+            if(evt.getStateChange() ==2){
+                Usuario temp = (Usuario) cb_cuenta_perfil.getSelectedItem();
+                if(temp !=null){
+                    tf_cuenta_nombre.setText(temp.getNombre());
+                    //sp_cuenta_edad.setValue(Integer.toString(temp.getEdad()));
+                    tf_cuenta_user.setText(temp.getUsuario());
+
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_cb_cuenta_perfilItemStateChanged
+
     public void mensaje(String s) {
         JOptionPane.showMessageDialog(this, s);
+    }
+    
+    public void mensaje(Component c, String s) {
+        JOptionPane.showMessageDialog(c, s);
     }
 
     public static void main(String args[]) {
@@ -1346,9 +1477,11 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_registrar_selectFoto;
+    private javax.swing.JButton bt_registro_deselect;
+    private javax.swing.JButton bt_registro_selectAll;
     private javax.swing.JButton bt_registro_signup;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup btg_sexo_cuenta;
+    private javax.swing.ButtonGroup btg_sexo_registro;
     private javax.swing.JComboBox<String> cb_cuenta_perfil;
     private javax.swing.JCheckBox chb_registro_anime;
     private javax.swing.JCheckBox chb_registro_anime1;
