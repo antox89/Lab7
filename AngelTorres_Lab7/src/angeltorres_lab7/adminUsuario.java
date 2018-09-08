@@ -57,7 +57,7 @@ public class adminUsuario {
         for (Usuario u : listaUsuarios) {
             s += u.getNombre();
         }
-        return s;
+        return " "+listaUsuarios;
     }
 
     public void cargarArchivo() {

@@ -40,11 +40,7 @@ public class Main extends javax.swing.JFrame {
             cb_cuenta_perfil.setModel(modCB);
         }
 
-        if(rb_cuenta_m.isSelected()){
-            lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp.jpg")));
-        }else{
-            lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp_f.jpg")));
-        }
+        
         
     }
 
@@ -116,13 +112,17 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_usuarioRegistrados = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         ta_test = new javax.swing.JTextArea();
         tb_test = new javax.swing.JButton();
         tf_tst = new javax.swing.JTextField();
         lb_test = new javax.swing.JLabel();
         cb_test = new javax.swing.JComboBox<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jt_amigos = new javax.swing.JList<>();
+        jButton3 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lb_cuenta_foto = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -143,14 +143,15 @@ public class Main extends javax.swing.JFrame {
         tf_cuenta_otroInteres = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
         ta_cuenta_interes = new javax.swing.JTextArea();
-        jButton6 = new javax.swing.JButton();
+        bt_cuenta_addInteres = new javax.swing.JButton();
         bt_cuenta_edit = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        bt_cuenta_save = new javax.swing.JButton();
+        bt_cuenta_selectFoto = new javax.swing.JButton();
         cb_cuenta_perfil = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         ta_cuenta_descripcion = new javax.swing.JTextArea();
         jLabel21 = new javax.swing.JLabel();
+        bt_cancel = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -567,13 +568,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel1.setText("Usuarios Registrados");
 
-        jButton2.setText("jButton2");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-
         ta_test.setColumns(20);
         ta_test.setRows(5);
         jScrollPane3.setViewportView(ta_test);
@@ -589,59 +583,82 @@ public class Main extends javax.swing.JFrame {
 
         cb_test.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jt_amigos.setModel(new DefaultListModel());
+        jScrollPane7.setViewportView(jt_amigos);
+
+        jButton3.setText("Add Amigo");
+
+        jLabel23.setText("Lista Amigos");
+
+        jButton8.setText("Eliminar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jButton3)
+                        .addGap(120, 120, 120)
+                        .addComponent(jButton8)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(94, 94, 94))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(166, 166, 166))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lb_test)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lb_test)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cb_test, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(tb_test)
-                                .addGap(48, 48, 48)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cb_test, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_tst, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())))
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_tst, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(50, 50, 50))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(jLabel1)
+                .addGap(113, 113, 113)
+                .addComponent(jLabel23)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel23))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tb_test)
                             .addComponent(tf_tst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56)
-                        .addComponent(cb_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(lb_test))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(194, Short.MAX_VALUE))
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cb_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_test))
+                        .addGap(187, 187, 187)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8)))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Perfil", jPanel1);
@@ -652,31 +669,45 @@ public class Main extends javax.swing.JFrame {
 
         jLabel13.setText("Usuario:");
 
+        tf_cuenta_nombre.setEnabled(false);
+
+        tf_cuenta_user.setEnabled(false);
+
         jLabel14.setText("Password:");
+
+        tf_cuenta_password.setEnabled(false);
 
         jLabel15.setText("Sexo:");
 
         btg_sexo_cuenta.add(rb_cuenta_m);
         rb_cuenta_m.setText("M");
+        rb_cuenta_m.setEnabled(false);
 
         btg_sexo_cuenta.add(rb_cuenta_f);
         rb_cuenta_f.setText("F");
+        rb_cuenta_f.setEnabled(false);
 
         jLabel16.setText("Edad:");
 
         sp_cuenta_edad.setModel(new javax.swing.SpinnerNumberModel(18, 18, 99, 1));
+        sp_cuenta_edad.setEnabled(false);
 
         checkbox_cuenta_premium.setText("Premium");
+        checkbox_cuenta_premium.setEnabled(false);
 
         jLabel17.setText("Intereses:");
 
         jLabel18.setText("Otro:");
 
+        tf_cuenta_otroInteres.setEnabled(false);
+
         ta_cuenta_interes.setColumns(20);
         ta_cuenta_interes.setRows(5);
+        ta_cuenta_interes.setEnabled(false);
         jScrollPane5.setViewportView(ta_cuenta_interes);
 
-        jButton6.setText("Agregar Interés");
+        bt_cuenta_addInteres.setText("Agregar Interés");
+        bt_cuenta_addInteres.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -693,7 +724,7 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tf_cuenta_otroInteres, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31)
-                                .addComponent(jButton6))))
+                                .addComponent(bt_cuenta_addInteres))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addComponent(jLabel17)))
@@ -710,15 +741,22 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(tf_cuenta_otroInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
+                    .addComponent(bt_cuenta_addInteres))
                 .addGap(8, 8, 8))
         );
 
         bt_cuenta_edit.setText("Modificar");
+        bt_cuenta_edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_cuenta_editMouseClicked(evt);
+            }
+        });
 
-        jButton4.setText("Guardar");
+        bt_cuenta_save.setText("Guardar");
+        bt_cuenta_save.setEnabled(false);
 
-        jButton5.setText("Seleccionar...");
+        bt_cuenta_selectFoto.setText("Seleccionar...");
+        bt_cuenta_selectFoto.setEnabled(false);
 
         cb_cuenta_perfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mi Perfil" }));
         cb_cuenta_perfil.addItemListener(new java.awt.event.ItemListener() {
@@ -729,9 +767,18 @@ public class Main extends javax.swing.JFrame {
 
         ta_cuenta_descripcion.setColumns(20);
         ta_cuenta_descripcion.setRows(5);
+        ta_cuenta_descripcion.setEnabled(false);
         jScrollPane4.setViewportView(ta_cuenta_descripcion);
 
         jLabel21.setText("Descripción");
+
+        bt_cancel.setText("Cancelar");
+        bt_cancel.setEnabled(false);
+        bt_cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_cancelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -747,10 +794,10 @@ public class Main extends javax.swing.JFrame {
                                 .addGap(33, 33, 33)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel21)
-                                    .addComponent(jButton5))))
+                                    .addComponent(bt_cuenta_selectFoto))))
                         .addGap(52, 52, 52))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -759,37 +806,37 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tf_cuenta_nombre)
-                                    .addComponent(tf_cuenta_user, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
+                                    .addComponent(tf_cuenta_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_cuenta_user, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tf_cuenta_password))
+                                        .addComponent(tf_cuenta_password, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel15)
                                         .addGap(27, 27, 27)
                                         .addComponent(rb_cuenta_m)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rb_cuenta_f)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGap(108, 108, 108))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel16)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                        .addGap(34, 34, 34)
                                         .addComponent(sp_cuenta_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(40, 40, 40)
                                         .addComponent(checkbox_cuenta_premium)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cb_cuenta_perfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bt_cuenta_edit, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(124, 124, 124)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cb_cuenta_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_cuenta_edit)
+                            .addComponent(bt_cuenta_save)
+                            .addComponent(bt_cancel)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(jButton4)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -803,39 +850,44 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(tf_cuenta_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cb_cuenta_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(tf_cuenta_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(tf_cuenta_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bt_cuenta_edit))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(rb_cuenta_m)
-                            .addComponent(rb_cuenta_f))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(sp_cuenta_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkbox_cuenta_premium)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel13)
+                                    .addComponent(tf_cuenta_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(tf_cuenta_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(bt_cancel)
+                                .addGap(16, 16, 16)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel15)
+                                    .addComponent(rb_cuenta_m)
+                                    .addComponent(rb_cuenta_f))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel16)
+                                    .addComponent(sp_cuenta_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkbox_cuenta_premium)
+                                    .addComponent(bt_cuenta_save)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_cuenta_edit))))
                     .addComponent(lb_cuenta_foto))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel21)
-                                .addGap(12, 12, 12)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jButton4)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(bt_cuenta_selectFoto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel21)
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
@@ -911,7 +963,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_registrar_selectFotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registrar_selectFotoMouseClicked
-        JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser("./");
         FileFilter filtro = new FileNameExtensionFilter("Imagenes", "jpg", "png", "jpeg", "gif");
         fc.setFileFilter(filtro);
         File archivo;
@@ -926,6 +978,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_registrar_selectFotoMouseClicked
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        
+        if(rb_cuenta_m.isSelected()){
+            lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp.jpg")));
+        }if(rb_cuenta_f.isSelected()){
+            lb_registro_foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angeltorres_lab7/180x220_pp_f.jpg")));
+        }
+        
         jd_registro.pack();
         jd_registro.setModal(true);
         jd_registro.setLocationRelativeTo(this);
@@ -1246,25 +1305,6 @@ public class Main extends javax.swing.JFrame {
         chb_registro_viajar.setSelected(false);
     }
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-        jl_usuarioRegistrados.setModel(new DefaultListModel());
-
-        adminUsuario au = new adminUsuario("./users.txt");
-        au.cargarArchivoT();
-        DefaultListModel modelo = (DefaultListModel) jl_usuarioRegistrados.getModel();
-
-        String s = "";
-        for (int i = 0; i < au.getListaUsuarios().size(); i++) {
-            modelo.add(i, au.getListaUsuarios().get(i).getNombre());
-            s += au.getListaUsuarios().get(i).getListaIntereses().toString();
-        }
-        System.out.println(s);
-        jl_usuarioRegistrados.setModel(modelo);
-
-
-    }//GEN-LAST:event_jButton2MouseClicked
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         jd_login.pack();
         jd_login.setModal(true);
@@ -1279,6 +1319,7 @@ public class Main extends javax.swing.JFrame {
         //au.cargarArchivo();
 
         boolean login = false;
+        int posU=0;
 
         if (tf_login_user.getText().equals("") || tf_login_password.getText().equals("")) {
             mensaje("Ingrese todos los campos");
@@ -1288,10 +1329,15 @@ public class Main extends javax.swing.JFrame {
                 if (tf_login_user.getText().equals(au.getListaUsuarios().get(i).getUsuario())
                         && tf_login_password.getText().equals(au.getListaUsuarios().get(i).getPassword())) {
                     login = true;
+                    posU=i;
+                    posUser=i;
                 }
             }
             if (login) {
                 System.out.println("sdsdgdg");
+                
+                logged = au.getListaUsuarios().get(posU).getNombre();
+                //logged = au.getListaUsuarios().get(posUser);
 
                 jd_login.dispose();
                 tf_login_user.setText("");
@@ -1338,11 +1384,19 @@ public class Main extends javax.swing.JFrame {
 
     private void cb_cuenta_perfilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_cuenta_perfilItemStateChanged
 
+        //bt_cuenta_edit.setVisible(false);
+        
         if (flag == 1) {
             if (evt.getStateChange() == 2) {
                 ta_cuenta_interes.setText("");
+                
                 Usuario temp = (Usuario) cb_cuenta_perfil.getSelectedItem();
                 if (temp != null) {
+                    
+                    //if(logged.equals(temp.getNombre())){
+                    //    bt_cuenta_edit.setVisible(true);
+                    //}else{
+                    
                     tf_cuenta_nombre.setText(temp.getNombre());
                     tf_cuenta_user.setText(temp.getUsuario());
 
@@ -1352,12 +1406,12 @@ public class Main extends javax.swing.JFrame {
                     sp_cuenta_edad.setValue(temp.getEdad());
                     ta_cuenta_descripcion.setText(temp.getDescripcion());
 
-                    System.out.println(temp.getSexo());
+                    //System.out.println(temp.getSexo());
                     
                     
                     
                     for (Interes t : temp.getListaIntereses()) {
-                        System.out.println(t.getInteres());
+                        //System.out.println(t.getInteres());
                         ta_cuenta_interes.append(t.getInteres()+",");
                     }
                     
@@ -1373,7 +1427,7 @@ public class Main extends javax.swing.JFrame {
                         checkbox_cuenta_premium.setSelected(false);
                     }
                     
-                    
+                    //}
                     
                     //adminUsuario ap = new adminUsuario(("./bin.att"));
 
@@ -1403,6 +1457,54 @@ public class Main extends javax.swing.JFrame {
         tf_tst.setText(ap.getListaUsuarios().get(2).getSexo());
     }//GEN-LAST:event_tb_testMouseClicked
 
+    private void bt_cuenta_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cuenta_editMouseClicked
+        //Modificar cuenta desde bt
+        bt_cuenta_save.setEnabled(false);
+        bt_cancel.setEnabled(true);
+        bt_cuenta_addInteres.setEnabled(true);
+        bt_cuenta_selectFoto.setEnabled(true);
+        bt_cuenta_save.setEnabled(true);
+        
+        rb_cuenta_f.setEnabled(true);
+        rb_cuenta_m.setEnabled(true);
+        ta_cuenta_interes.setEnabled(true);
+        tf_cuenta_otroInteres.setEnabled(true);
+        
+        
+        tf_cuenta_nombre.setEnabled(true);
+        tf_cuenta_user.setEnabled(true);
+        tf_cuenta_password.setEnabled(true);
+        sp_cuenta_edad.setEnabled(true);
+        ta_cuenta_descripcion.setEnabled(true);
+        checkbox_cuenta_premium.setEnabled(true);
+        
+    }//GEN-LAST:event_bt_cuenta_editMouseClicked
+
+    private void bt_cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cancelMouseClicked
+        cancelEditCuenta();
+    }//GEN-LAST:event_bt_cancelMouseClicked
+
+    public void cancelEditCuenta(){
+        //Cancelar cambios cuenta desde bt
+        
+        bt_cancel.setEnabled(false);
+        bt_cuenta_addInteres.setEnabled(false);
+        bt_cuenta_selectFoto.setEnabled(false);
+        bt_cuenta_save.setEnabled(false);
+        
+        rb_cuenta_f.setEnabled(false);
+        rb_cuenta_m.setEnabled(false);
+        ta_cuenta_interes.setEnabled(false);
+        tf_cuenta_otroInteres.setEnabled(false);
+        
+        tf_cuenta_nombre.setEnabled(false);
+        tf_cuenta_user.setEnabled(false);
+        tf_cuenta_password.setEnabled(false);
+        sp_cuenta_edad.setEnabled(false);
+        ta_cuenta_descripcion.setEnabled(false);
+        checkbox_cuenta_premium.setEnabled(false);
+    }
+    
     public void mensaje(String s) {
         JOptionPane.showMessageDialog(this, s);
     }
@@ -1444,7 +1546,11 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_cancel;
+    private javax.swing.JButton bt_cuenta_addInteres;
     private javax.swing.JButton bt_cuenta_edit;
+    private javax.swing.JButton bt_cuenta_save;
+    private javax.swing.JButton bt_cuenta_selectFoto;
     private javax.swing.JButton bt_registrar_selectFoto;
     private javax.swing.JButton bt_registro_deselect;
     private javax.swing.JButton bt_registro_selectAll;
@@ -1474,11 +1580,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkbox_cuenta_premium;
     private javax.swing.JCheckBox checkox_registro;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1495,6 +1599,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1520,6 +1625,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
@@ -1528,6 +1634,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog jd_mensaje;
     private javax.swing.JDialog jd_registro;
     private javax.swing.JList<String> jl_usuarioRegistrados;
+    private javax.swing.JList<String> jt_amigos;
     private javax.swing.JLabel lb_cuenta_foto;
     private javax.swing.JLabel lb_registro_foto;
     private javax.swing.JLabel lb_test;
@@ -1554,6 +1661,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_tst;
     // End of variables declaration//GEN-END:variables
     Usuario usuario_seleccionado;
-    Interes interes_seleccionado;
-    int flag = 0;
+    String logged;
+    
+    
+    int flag = 0, posUser=0;
 }
