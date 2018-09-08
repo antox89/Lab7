@@ -855,7 +855,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jlb_foto" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lb_cuenta_foto" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                       <Component id="jButton5" min="-2" max="-2" attributes="0"/>
@@ -914,7 +914,7 @@
                               </Group>
                               <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bt_cuenta_edit" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                                   <Component id="cb_cuenta_perfil" min="-2" pref="166" max="-2" attributes="0"/>
                               </Group>
@@ -966,11 +966,11 @@
                                   <Component id="checkbox_cuenta_premium" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jlb_foto" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_cuenta_foto" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="bt_cuenta_edit" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="cb_cuenta_perfil" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -994,7 +994,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jlb_foto">
+            <Component class="javax.swing.JLabel" name="lb_cuenta_foto">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/angeltorres_lab7/180x220_pp.jpg"/>
@@ -1303,7 +1303,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="bt_cuenta_edit">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
