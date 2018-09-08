@@ -1428,6 +1428,12 @@ public class Main extends javax.swing.JFrame {
                     tf_cuenta_nombre.setText(temp.getNombre());
                     //sp_cuenta_edad.setValue(Integer.toString(temp.getEdad()));
                     tf_cuenta_user.setText(temp.getUsuario());
+                    
+                    //lb_cuenta_foto.setIcon(lb_registro_foto.getIcon());
+                    
+                    tf_cuenta_password.setText(temp.getPassword());
+                    sp_cuenta_edad.setValue(temp.getEdad());
+                    ta_cuenta_descripcion.setText(temp.getDescripcion());
 
                 }
             }
